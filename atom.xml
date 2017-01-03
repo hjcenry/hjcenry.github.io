@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://hjcenry.github.io/"/>
-  <updated>2017-01-02T18:22:25.000Z</updated>
+  <updated>2017-01-03T14:21:33.000Z</updated>
   <id>http://hjcenry.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://hjcenry.github.io/2017/01/03/Java%E6%B8%B8%E6%88%8F%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%E2%80%94%E2%80%942016%E9%9A%8F%E7%AC%94%E6%80%BB%E7%BB%93/"/>
     <id>http://hjcenry.github.io/2017/01/03/Java游戏服务器成长之路——2016随笔总结/</id>
     <published>2017-01-02T18:16:00.000Z</published>
-    <updated>2017-01-02T18:22:25.000Z</updated>
+    <updated>2017-01-03T14:21:33.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="写在开头"><a href="#写在开头" class="headerlink" title="写在开头"></a>写在开头</h1><p>Java游戏服务器成长之路的系列，已经很长时间没写了，不是不想写，而是这一年，基本都是在忙别的了，今天特地挤出时间，对我的2016年，做一个不留遗憾的总结。<a id="more"></a></p>
 <h1 id="2016的事件"><a href="#2016的事件" class="headerlink" title="2016的事件"></a>2016的事件</h1><p>不知不觉，又到了春节抢票的时候了，这两天除了盼着年终能发点奖金以外，就是盼着能买一张合适的火车票，今年是离家最久的一年，幸运的是，我成都的小房子要结房了，必须要我本人去，这就能给我一个理由多请一周的假提前回去几天，很久没看到家人了，离家这么久，还是挺想念的。另外就是，盼着发年终奖了，毕竟工作了一年，也没什么存款，哎。。。</p>
@@ -47,7 +47,7 @@
 <li>能出门旅游一次，带上父母和女朋友（在2的基础之上）</li>
 <li>生活越来越好，账户余额越来越多，存款越来越多（在2的基础之上）</li>
 </ol>
-<h1 id="写到最后"><a href="#写到最后" class="headerlink" title="写到最后"></a>写到最后</h1><p>时间已过一点，本来想在年前就写总结的，一直没找到合适的时间，今天想想，不能拖了，今天一定要写完，让2016不留遗憾！文章结尾特地再次感谢一直等我写完一起睡觉的女朋友……</p>
+<h1 id="写到最后"><a href="#写到最后" class="headerlink" title="写到最后"></a>写到最后</h1><p>时间已过一点，本来想在年前就写总结的，一直没找到合适的时间，今天想想，不能拖了，今天一定要写完，让2016不留遗憾！文章结尾特地再次感谢一直陪伴我的女朋友……</p>
 <p><img src="http://upload-images.jianshu.io/upload_images/1472037-0c52d4903e6c8647.JPG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="DSC00087.JPG"></p>
 ]]></content>
     
@@ -63,8 +63,6 @@
       <category term="Java" scheme="http://hjcenry.github.io/tags/Java/"/>
     
       <category term="游戏服务器" scheme="http://hjcenry.github.io/tags/%E6%B8%B8%E6%88%8F%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
-    
-      <category term="Java游戏服务器成长之路" scheme="http://hjcenry.github.io/tags/Java%E6%B8%B8%E6%88%8F%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF/"/>
     
       <category term="架构" scheme="http://hjcenry.github.io/tags/%E6%9E%B6%E6%9E%84/"/>
     
