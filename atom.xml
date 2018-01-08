@@ -4,9 +4,9 @@
   <subtitle>Javaer</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://hjcenry.github.io/"/>
-  <updated>2018-01-08T16:06:27.318Z</updated>
-  <id>http://hjcenry.github.io/</id>
+  <link href="http://hjcenry.coding.me/"/>
+  <updated>2018-01-08T16:14:45.104Z</updated>
+  <id>http://hjcenry.coding.me/</id>
   
   <author>
     <name>Henry He</name>
@@ -17,13 +17,13 @@
   
   <entry>
     <title>2017随笔总结</title>
-    <link href="http://hjcenry.github.io/2018/01/08/2017%E9%9A%8F%E7%AC%94%E6%80%BB%E7%BB%93/"/>
-    <id>http://hjcenry.github.io/2018/01/08/2017随笔总结/</id>
+    <link href="http://hjcenry.coding.me/2018/01/08/2017%E9%9A%8F%E7%AC%94%E6%80%BB%E7%BB%93/"/>
+    <id>http://hjcenry.coding.me/2018/01/08/2017随笔总结/</id>
     <published>2018-01-08T12:14:00.000Z</published>
-    <updated>2018-01-08T16:06:27.318Z</updated>
+    <updated>2018-01-08T16:14:45.104Z</updated>
     
     <content type="html"><![CDATA[<p>今天，已经是2018年1月8日，2017年已经过去，今天挤出来时间，来为我的2017做一个迟到的总结。回忆起上次写文章，是2017年2月16号了，那篇文章叫做《我在创业游戏公司的一年》。这一年时间，我没有写文章，20%是因为今年变得很忙，几乎没有太多的业余时间，剩下的80%嘛，嗯，是因为懒，哈哈！说实在的，没有写不代表这一年什么都没发生，相反，2017年，是我收货最大的一年，嗯，各方各面。</p>
-<p>过去的2017年，我做了很多我一直很想做的事。</p>
+<p>过去的2017年，我做了很多我一直很想做的事。<a id="more"></a></p>
 <h2 id="完成了4次小型旅游"><a href="#完成了4次小型旅游" class="headerlink" title="完成了4次小型旅游"></a>完成了4次小型旅游</h2><p>还记得2016年写过一篇文章，计划2017年“能出门旅游一次，带上父母和女朋友”，这个小目标算是完成了，而且还超额完成了，因为17年，我们一共旅行了四次，第一次是五一青岛游，第二次是周末天津游，第三次是周末古北水镇游，第四次是元旦上海游。</p>
 <p>五一青岛游，这是一次女朋友、我妈、我姨妈、我，我们四个人的旅行，也是今年最满意的一次旅行，整个过程很舒服，青岛也是个十分舒适的城市，那时天气还不算热，也不算冷，很适宜的温度，沙滩上晒太阳的感觉很舒服，青岛的海鲜很好吃，没有遇到新闻里的坑人大虾，青岛有着很典型的滨海城市的特色、海风、海浪、沙滩、海鲜，该有的都有。好玩，好吃，还划算，去的很值。</p>
 <p>周末天津游，由女朋友、我、我姨妈、我舅妈我们四个人去的，之前我去过几次天津，印象还是不错的，印象很深的是有一次和同学来天津逛，天津的炸糕给了我很深的回味，很怀念天津炸糕的味道。可惜的是，这次天津游就不是那么顺利了，由于我们想要去天津的海边，于是我们在天津的塘沽地铁站下了地铁，一下地铁，就有很多人过来拉客，说到海边只要十元一位，我们算了下，自己坐车去也比这贵，于是就糊里糊涂的上了车，结果司机给我们拉到了不知名的海边，可以看出来，海边根本还没怎么开发，海水的颜色，就像黄河一样浑浊，这大概是我看过最脏的海水了，不知道是天津的海都这样还是只是这个地方是这样。那个地方很偏，只能通过他们拉客的车进出，不仅浪费了我们的时间，也坑了我们的钱，这大概就是最糟糕的一次天津游了，想想之前我们有同学在这里进了传销，我不是地域黑，但现在想想，天津整体给人的印象大概就一个字“骗”。</p>
@@ -41,27 +41,28 @@
     
     <summary type="html">
     
-      &lt;p&gt;今天，已经是2018年1月8日，2017年已经过去，今天挤出来时间，来为我的2017做一个迟到的总结。回忆起上次写文章，是2017年2月16号了，那篇文章叫做《我在创业游戏公司的一年》。这一年时间，我没有写文章，20%是因为今年变得很忙，几乎没有太多的业余时间，剩下的80%
+      &lt;p&gt;今天，已经是2018年1月8日，2017年已经过去，今天挤出来时间，来为我的2017做一个迟到的总结。回忆起上次写文章，是2017年2月16号了，那篇文章叫做《我在创业游戏公司的一年》。这一年时间，我没有写文章，20%是因为今年变得很忙，几乎没有太多的业余时间，剩下的80%嘛，嗯，是因为懒，哈哈！说实在的，没有写不代表这一年什么都没发生，相反，2017年，是我收货最大的一年，嗯，各方各面。&lt;/p&gt;
+&lt;p&gt;过去的2017年，我做了很多我一直很想做的事。
     
     </summary>
     
-      <category term="Java" scheme="http://hjcenry.github.io/categories/Java/"/>
+      <category term="Java" scheme="http://hjcenry.coding.me/categories/Java/"/>
     
     
-      <category term="Java" scheme="http://hjcenry.github.io/tags/Java/"/>
+      <category term="Java" scheme="http://hjcenry.coding.me/tags/Java/"/>
     
-      <category term="游戏服务器" scheme="http://hjcenry.github.io/tags/%E6%B8%B8%E6%88%8F%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+      <category term="游戏服务器" scheme="http://hjcenry.coding.me/tags/%E6%B8%B8%E6%88%8F%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     
-      <category term="总结" scheme="http://hjcenry.github.io/tags/%E6%80%BB%E7%BB%93/"/>
+      <category term="总结" scheme="http://hjcenry.coding.me/tags/%E6%80%BB%E7%BB%93/"/>
     
-      <category term="随笔" scheme="http://hjcenry.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="http://hjcenry.coding.me/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
   <entry>
     <title>我在创业游戏公司的一年</title>
-    <link href="http://hjcenry.github.io/2017/02/16/%E6%88%91%E5%9C%A8%E5%88%9B%E4%B8%9A%E6%B8%B8%E6%88%8F%E5%85%AC%E5%8F%B8%E7%9A%84%E4%B8%80%E5%B9%B4/"/>
-    <id>http://hjcenry.github.io/2017/02/16/我在创业游戏公司的一年/</id>
+    <link href="http://hjcenry.coding.me/2017/02/16/%E6%88%91%E5%9C%A8%E5%88%9B%E4%B8%9A%E6%B8%B8%E6%88%8F%E5%85%AC%E5%8F%B8%E7%9A%84%E4%B8%80%E5%B9%B4/"/>
+    <id>http://hjcenry.coding.me/2017/02/16/我在创业游戏公司的一年/</id>
     <published>2017-02-16T08:03:00.000Z</published>
     <updated>2017-02-19T06:06:26.000Z</updated>
     
@@ -87,21 +88,21 @@
     
     </summary>
     
-      <category term="Java" scheme="http://hjcenry.github.io/categories/Java/"/>
+      <category term="Java" scheme="http://hjcenry.coding.me/categories/Java/"/>
     
     
-      <category term="Java" scheme="http://hjcenry.github.io/tags/Java/"/>
+      <category term="Java" scheme="http://hjcenry.coding.me/tags/Java/"/>
     
-      <category term="游戏服务器" scheme="http://hjcenry.github.io/tags/%E6%B8%B8%E6%88%8F%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+      <category term="游戏服务器" scheme="http://hjcenry.coding.me/tags/%E6%B8%B8%E6%88%8F%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     
-      <category term="创业" scheme="http://hjcenry.github.io/tags/%E5%88%9B%E4%B8%9A/"/>
+      <category term="创业" scheme="http://hjcenry.coding.me/tags/%E5%88%9B%E4%B8%9A/"/>
     
   </entry>
   
   <entry>
     <title>Java游戏服务器成长之路——2016随笔总结</title>
-    <link href="http://hjcenry.github.io/2017/01/03/Java%E6%B8%B8%E6%88%8F%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%E2%80%94%E2%80%942016%E9%9A%8F%E7%AC%94%E6%80%BB%E7%BB%93/"/>
-    <id>http://hjcenry.github.io/2017/01/03/Java游戏服务器成长之路——2016随笔总结/</id>
+    <link href="http://hjcenry.coding.me/2017/01/03/Java%E6%B8%B8%E6%88%8F%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%E2%80%94%E2%80%942016%E9%9A%8F%E7%AC%94%E6%80%BB%E7%BB%93/"/>
+    <id>http://hjcenry.coding.me/2017/01/03/Java游戏服务器成长之路——2016随笔总结/</id>
     <published>2017-01-02T18:16:00.000Z</published>
     <updated>2017-01-04T14:15:04.000Z</updated>
     
@@ -141,25 +142,25 @@
     
     </summary>
     
-      <category term="Java" scheme="http://hjcenry.github.io/categories/Java/"/>
+      <category term="Java" scheme="http://hjcenry.coding.me/categories/Java/"/>
     
     
-      <category term="Java" scheme="http://hjcenry.github.io/tags/Java/"/>
+      <category term="Java" scheme="http://hjcenry.coding.me/tags/Java/"/>
     
-      <category term="游戏服务器" scheme="http://hjcenry.github.io/tags/%E6%B8%B8%E6%88%8F%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+      <category term="游戏服务器" scheme="http://hjcenry.coding.me/tags/%E6%B8%B8%E6%88%8F%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     
-      <category term="总结" scheme="http://hjcenry.github.io/tags/%E6%80%BB%E7%BB%93/"/>
+      <category term="总结" scheme="http://hjcenry.coding.me/tags/%E6%80%BB%E7%BB%93/"/>
     
-      <category term="随笔" scheme="http://hjcenry.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="http://hjcenry.coding.me/tags/%E9%9A%8F%E7%AC%94/"/>
     
-      <category term="架构" scheme="http://hjcenry.github.io/tags/%E6%9E%B6%E6%9E%84/"/>
+      <category term="架构" scheme="http://hjcenry.coding.me/tags/%E6%9E%B6%E6%9E%84/"/>
     
   </entry>
   
   <entry>
     <title>SLG手游Java服务器数据管理方案</title>
-    <link href="http://hjcenry.github.io/2016/10/22/SLG%E6%89%8B%E6%B8%B8Java%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E6%96%B9%E6%A1%88/"/>
-    <id>http://hjcenry.github.io/2016/10/22/SLG手游Java服务器数据管理方案/</id>
+    <link href="http://hjcenry.coding.me/2016/10/22/SLG%E6%89%8B%E6%B8%B8Java%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E6%96%B9%E6%A1%88/"/>
+    <id>http://hjcenry.coding.me/2016/10/22/SLG手游Java服务器数据管理方案/</id>
     <published>2016-10-22T07:25:00.000Z</published>
     <updated>2016-10-22T15:37:00.000Z</updated>
     
@@ -193,21 +194,21 @@
     
     </summary>
     
-      <category term="Java" scheme="http://hjcenry.github.io/categories/Java/"/>
+      <category term="Java" scheme="http://hjcenry.coding.me/categories/Java/"/>
     
     
-      <category term="Java" scheme="http://hjcenry.github.io/tags/Java/"/>
+      <category term="Java" scheme="http://hjcenry.coding.me/tags/Java/"/>
     
-      <category term="游戏服务器" scheme="http://hjcenry.github.io/tags/%E6%B8%B8%E6%88%8F%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+      <category term="游戏服务器" scheme="http://hjcenry.coding.me/tags/%E6%B8%B8%E6%88%8F%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     
-      <category term="SLG" scheme="http://hjcenry.github.io/tags/SLG/"/>
+      <category term="SLG" scheme="http://hjcenry.coding.me/tags/SLG/"/>
     
   </entry>
   
   <entry>
     <title>SLG手游Java服务器的设计与开发——数据管理</title>
-    <link href="http://hjcenry.github.io/2016/09/04/SLG%E6%89%8B%E6%B8%B8Java%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E2%80%94%E2%80%94%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86/"/>
-    <id>http://hjcenry.github.io/2016/09/04/SLG手游Java服务器的设计与开发——数据管理/</id>
+    <link href="http://hjcenry.coding.me/2016/09/04/SLG%E6%89%8B%E6%B8%B8Java%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E2%80%94%E2%80%94%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86/"/>
+    <id>http://hjcenry.coding.me/2016/09/04/SLG手游Java服务器的设计与开发——数据管理/</id>
     <published>2016-09-04T02:13:00.000Z</published>
     <updated>2016-09-04T12:01:34.000Z</updated>
     
@@ -252,21 +253,21 @@
     
     </summary>
     
-      <category term="Java" scheme="http://hjcenry.github.io/categories/Java/"/>
+      <category term="Java" scheme="http://hjcenry.coding.me/categories/Java/"/>
     
     
-      <category term="Java" scheme="http://hjcenry.github.io/tags/Java/"/>
+      <category term="Java" scheme="http://hjcenry.coding.me/tags/Java/"/>
     
-      <category term="游戏服务器" scheme="http://hjcenry.github.io/tags/%E6%B8%B8%E6%88%8F%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+      <category term="游戏服务器" scheme="http://hjcenry.coding.me/tags/%E6%B8%B8%E6%88%8F%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     
-      <category term="SLG" scheme="http://hjcenry.github.io/tags/SLG/"/>
+      <category term="SLG" scheme="http://hjcenry.coding.me/tags/SLG/"/>
     
   </entry>
   
   <entry>
     <title>SLG手游Java服务器的设计与开发——网络通信</title>
-    <link href="http://hjcenry.github.io/2016/08/27/SLG%E6%89%8B%E6%B8%B8Java%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E2%80%94%E2%80%94%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1/"/>
-    <id>http://hjcenry.github.io/2016/08/27/SLG手游Java服务器的设计与开发——网络通信/</id>
+    <link href="http://hjcenry.coding.me/2016/08/27/SLG%E6%89%8B%E6%B8%B8Java%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E2%80%94%E2%80%94%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1/"/>
+    <id>http://hjcenry.coding.me/2016/08/27/SLG手游Java服务器的设计与开发——网络通信/</id>
     <published>2016-08-27T11:01:00.000Z</published>
     <updated>2016-08-28T14:49:44.000Z</updated>
     
@@ -303,21 +304,21 @@
     
     </summary>
     
-      <category term="Java" scheme="http://hjcenry.github.io/categories/Java/"/>
+      <category term="Java" scheme="http://hjcenry.coding.me/categories/Java/"/>
     
     
-      <category term="Java" scheme="http://hjcenry.github.io/tags/Java/"/>
+      <category term="Java" scheme="http://hjcenry.coding.me/tags/Java/"/>
     
-      <category term="游戏服务器" scheme="http://hjcenry.github.io/tags/%E6%B8%B8%E6%88%8F%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+      <category term="游戏服务器" scheme="http://hjcenry.coding.me/tags/%E6%B8%B8%E6%88%8F%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     
-      <category term="SLG" scheme="http://hjcenry.github.io/tags/SLG/"/>
+      <category term="SLG" scheme="http://hjcenry.coding.me/tags/SLG/"/>
     
   </entry>
   
   <entry>
     <title>SLG手游Java服务器的设计与开发——架构分析</title>
-    <link href="http://hjcenry.github.io/2016/08/14/SLG%E6%89%8B%E6%B8%B8Java%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E2%80%94%E2%80%94%E6%9E%B6%E6%9E%84%E5%88%86%E6%9E%90/"/>
-    <id>http://hjcenry.github.io/2016/08/14/SLG手游Java服务器的设计与开发——架构分析/</id>
+    <link href="http://hjcenry.coding.me/2016/08/14/SLG%E6%89%8B%E6%B8%B8Java%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E2%80%94%E2%80%94%E6%9E%B6%E6%9E%84%E5%88%86%E6%9E%90/"/>
+    <id>http://hjcenry.coding.me/2016/08/14/SLG手游Java服务器的设计与开发——架构分析/</id>
     <published>2016-08-13T16:07:00.000Z</published>
     <updated>2016-08-13T16:08:08.000Z</updated>
     
@@ -365,21 +366,21 @@
     
     </summary>
     
-      <category term="Java" scheme="http://hjcenry.github.io/categories/Java/"/>
+      <category term="Java" scheme="http://hjcenry.coding.me/categories/Java/"/>
     
     
-      <category term="Java" scheme="http://hjcenry.github.io/tags/Java/"/>
+      <category term="Java" scheme="http://hjcenry.coding.me/tags/Java/"/>
     
-      <category term="游戏服务器" scheme="http://hjcenry.github.io/tags/%E6%B8%B8%E6%88%8F%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+      <category term="游戏服务器" scheme="http://hjcenry.coding.me/tags/%E6%B8%B8%E6%88%8F%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     
-      <category term="SLG" scheme="http://hjcenry.github.io/tags/SLG/"/>
+      <category term="SLG" scheme="http://hjcenry.coding.me/tags/SLG/"/>
     
   </entry>
   
   <entry>
     <title>Cocos2d-JS实现的打飞机</title>
-    <link href="http://hjcenry.github.io/2016/07/10/Cocos2d-JS%E5%AE%9E%E7%8E%B0%E7%9A%84%E6%89%93%E9%A3%9E%E6%9C%BA/"/>
-    <id>http://hjcenry.github.io/2016/07/10/Cocos2d-JS实现的打飞机/</id>
+    <link href="http://hjcenry.coding.me/2016/07/10/Cocos2d-JS%E5%AE%9E%E7%8E%B0%E7%9A%84%E6%89%93%E9%A3%9E%E6%9C%BA/"/>
+    <id>http://hjcenry.coding.me/2016/07/10/Cocos2d-JS实现的打飞机/</id>
     <published>2016-07-10T10:17:00.000Z</published>
     <updated>2016-07-10T12:56:50.000Z</updated>
     
@@ -400,7 +401,7 @@
 <h3 id="运行效果"><a href="#运行效果" class="headerlink" title="运行效果"></a>运行效果</h3><p>最后的运行效果如下<br><img src="http://7xnnwn.com1.z0.glb.clouddn.com/Plane.gif" alt="打飞机效果图"><br>通过CVP平台的项目托管可看到实际运行效果，地址如下：<br><a href="http://www.cocoscvp.com/usercode/3d1775ea3aea1f12e986b7d8ebbb079fca12c064/" target="_blank" rel="external">http://www.cocoscvp.com/usercode/3d1775ea3aea1f12e986b7d8ebbb079fca12c064/</a></p>
 <h3 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h3><p>所有源代码均上传到github，欢迎交流学习，地址：<br><a href="https://github.com/hjcenry/plane" target="_blank" rel="external">https://github.com/hjcenry/plane</a></p>
 <ul>
-<li>原文博客：<a href="http://hjcenry.github.io">http://hjcenry.github.io</a></li>
+<li>原文博客：<a href="http://hjcenry.github.io" target="_blank" rel="external">http://hjcenry.github.io</a></li>
 </ul>
 ]]></content>
     
@@ -410,21 +411,21 @@
     
     </summary>
     
-      <category term="cocos2d-js" scheme="http://hjcenry.github.io/categories/cocos2d-js/"/>
+      <category term="cocos2d-js" scheme="http://hjcenry.coding.me/categories/cocos2d-js/"/>
     
     
-      <category term="cocos2d-js" scheme="http://hjcenry.github.io/tags/cocos2d-js/"/>
+      <category term="cocos2d-js" scheme="http://hjcenry.coding.me/tags/cocos2d-js/"/>
     
-      <category term="cvp" scheme="http://hjcenry.github.io/tags/cvp/"/>
+      <category term="cvp" scheme="http://hjcenry.coding.me/tags/cvp/"/>
     
-      <category term="打飞机" scheme="http://hjcenry.github.io/tags/%E6%89%93%E9%A3%9E%E6%9C%BA/"/>
+      <category term="打飞机" scheme="http://hjcenry.coding.me/tags/%E6%89%93%E9%A3%9E%E6%9C%BA/"/>
     
   </entry>
   
   <entry>
     <title>Cocos Creator实现的《点我+1》</title>
-    <link href="http://hjcenry.github.io/2016/07/02/Cocos%20Creator%E5%AE%9E%E7%8E%B0%E7%9A%84%E3%80%8A%E7%82%B9%E6%88%91+1%E3%80%8B/"/>
-    <id>http://hjcenry.github.io/2016/07/02/Cocos Creator实现的《点我+1》/</id>
+    <link href="http://hjcenry.coding.me/2016/07/02/Cocos%20Creator%E5%AE%9E%E7%8E%B0%E7%9A%84%E3%80%8A%E7%82%B9%E6%88%91+1%E3%80%8B/"/>
+    <id>http://hjcenry.coding.me/2016/07/02/Cocos Creator实现的《点我+1》/</id>
     <published>2016-07-02T09:14:00.000Z</published>
     <updated>2016-07-02T17:12:24.000Z</updated>
     
@@ -454,7 +455,7 @@
 </ul>
 <h3 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h3><p>所有源代码均上传到github，欢迎交流学习，地址：<br><a href="https://github.com/hjcenry/addone" target="_blank" rel="external">https://github.com/hjcenry/addone</a></p>
 <ul>
-<li>原文博客：<a href="http://hjcenry.github.io">http://hjcenry.github.io</a></li>
+<li>原文博客：<a href="http://hjcenry.github.io" target="_blank" rel="external">http://hjcenry.github.io</a></li>
 </ul>
 ]]></content>
     
@@ -464,21 +465,21 @@
     
     </summary>
     
-      <category term="cocos2d-js" scheme="http://hjcenry.github.io/categories/cocos2d-js/"/>
+      <category term="cocos2d-js" scheme="http://hjcenry.coding.me/categories/cocos2d-js/"/>
     
     
-      <category term="cocos2d-js" scheme="http://hjcenry.github.io/tags/cocos2d-js/"/>
+      <category term="cocos2d-js" scheme="http://hjcenry.coding.me/tags/cocos2d-js/"/>
     
-      <category term="cvp" scheme="http://hjcenry.github.io/tags/cvp/"/>
+      <category term="cvp" scheme="http://hjcenry.coding.me/tags/cvp/"/>
     
-      <category term="点我+1" scheme="http://hjcenry.github.io/tags/%E7%82%B9%E6%88%91-1/"/>
+      <category term="点我+1" scheme="http://hjcenry.coding.me/tags/%E7%82%B9%E6%88%91-1/"/>
     
   </entry>
   
   <entry>
     <title>Cocos2d-JS实现的2048</title>
-    <link href="http://hjcenry.github.io/2016/06/19/Cocos2d-JS%E5%AE%9E%E7%8E%B0%E7%9A%842048/"/>
-    <id>http://hjcenry.github.io/2016/06/19/Cocos2d-JS实现的2048/</id>
+    <link href="http://hjcenry.coding.me/2016/06/19/Cocos2d-JS%E5%AE%9E%E7%8E%B0%E7%9A%842048/"/>
+    <id>http://hjcenry.coding.me/2016/06/19/Cocos2d-JS实现的2048/</id>
     <published>2016-06-19T14:29:00.000Z</published>
     <updated>2016-06-19T14:58:10.000Z</updated>
     
@@ -503,7 +504,7 @@
 <h3 id="运行效果"><a href="#运行效果" class="headerlink" title="运行效果"></a>运行效果</h3><p>最后的运行效果如下<br><img src="http://7xnnwn.com1.z0.glb.clouddn.com/2048.gif" alt="2048效果图"><br>通过CVP平台的项目托管可看到实际运行效果，地址如下：<br><a href="http://www.cocoscvp.com/usercode/ea72822aeed0546b537b4226954a11be87a7f152/" target="_blank" rel="external">http://www.cocoscvp.com/usercode/ea72822aeed0546b537b4226954a11be87a7f152/</a></p>
 <h3 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h3><p>所有源代码均上传到github，欢迎交流学习，地址：<br><a href="https://github.com/hjcenry/2048" target="_blank" rel="external">https://github.com/hjcenry/2048</a></p>
 <ul>
-<li>原文博客：<a href="http://hjcenry.github.io">http://hjcenry.github.io</a></li>
+<li>原文博客：<a href="http://hjcenry.github.io" target="_blank" rel="external">http://hjcenry.github.io</a></li>
 </ul>
 ]]></content>
     
@@ -513,21 +514,21 @@
     
     </summary>
     
-      <category term="cocos2d-js" scheme="http://hjcenry.github.io/categories/cocos2d-js/"/>
+      <category term="cocos2d-js" scheme="http://hjcenry.coding.me/categories/cocos2d-js/"/>
     
     
-      <category term="cocos2d-js" scheme="http://hjcenry.github.io/tags/cocos2d-js/"/>
+      <category term="cocos2d-js" scheme="http://hjcenry.coding.me/tags/cocos2d-js/"/>
     
-      <category term="cvp" scheme="http://hjcenry.github.io/tags/cvp/"/>
+      <category term="cvp" scheme="http://hjcenry.coding.me/tags/cvp/"/>
     
-      <category term="2048" scheme="http://hjcenry.github.io/tags/2048/"/>
+      <category term="2048" scheme="http://hjcenry.coding.me/tags/2048/"/>
     
   </entry>
   
   <entry>
     <title>CVP认证学习笔记--(何小成)027--纹理缓存的管理</title>
-    <link href="http://hjcenry.github.io/2016/06/02/CVP%E8%AE%A4%E8%AF%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0--(%E4%BD%95%E5%B0%8F%E6%88%90)027--%E7%BA%B9%E7%90%86%E7%BC%93%E5%AD%98%E7%9A%84%E7%AE%A1%E7%90%86/"/>
-    <id>http://hjcenry.github.io/2016/06/02/CVP认证学习笔记--(何小成)027--纹理缓存的管理/</id>
+    <link href="http://hjcenry.coding.me/2016/06/02/CVP%E8%AE%A4%E8%AF%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0--(%E4%BD%95%E5%B0%8F%E6%88%90)027--%E7%BA%B9%E7%90%86%E7%BC%93%E5%AD%98%E7%9A%84%E7%AE%A1%E7%90%86/"/>
+    <id>http://hjcenry.coding.me/2016/06/02/CVP认证学习笔记--(何小成)027--纹理缓存的管理/</id>
     <published>2016-06-02T15:39:00.000Z</published>
     <updated>2016-06-02T16:09:44.000Z</updated>
     
@@ -545,19 +546,19 @@
     
     </summary>
     
-      <category term="cocos2d-js" scheme="http://hjcenry.github.io/categories/cocos2d-js/"/>
+      <category term="cocos2d-js" scheme="http://hjcenry.coding.me/categories/cocos2d-js/"/>
     
     
-      <category term="cocos2d-js" scheme="http://hjcenry.github.io/tags/cocos2d-js/"/>
+      <category term="cocos2d-js" scheme="http://hjcenry.coding.me/tags/cocos2d-js/"/>
     
-      <category term="cvp" scheme="http://hjcenry.github.io/tags/cvp/"/>
+      <category term="cvp" scheme="http://hjcenry.coding.me/tags/cvp/"/>
     
   </entry>
   
   <entry>
     <title>CVP认证学习笔记--(何小成)026--数组的使用</title>
-    <link href="http://hjcenry.github.io/2016/05/29/CVP%E8%AE%A4%E8%AF%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0--(%E4%BD%95%E5%B0%8F%E6%88%90)026--%E6%95%B0%E7%BB%84%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
-    <id>http://hjcenry.github.io/2016/05/29/CVP认证学习笔记--(何小成)026--数组的使用/</id>
+    <link href="http://hjcenry.coding.me/2016/05/29/CVP%E8%AE%A4%E8%AF%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0--(%E4%BD%95%E5%B0%8F%E6%88%90)026--%E6%95%B0%E7%BB%84%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+    <id>http://hjcenry.coding.me/2016/05/29/CVP认证学习笔记--(何小成)026--数组的使用/</id>
     <published>2016-05-29T02:35:00.000Z</published>
     <updated>2016-05-29T02:35:10.000Z</updated>
     
@@ -573,19 +574,19 @@
     
     </summary>
     
-      <category term="cocos2d-js" scheme="http://hjcenry.github.io/categories/cocos2d-js/"/>
+      <category term="cocos2d-js" scheme="http://hjcenry.coding.me/categories/cocos2d-js/"/>
     
     
-      <category term="cocos2d-js" scheme="http://hjcenry.github.io/tags/cocos2d-js/"/>
+      <category term="cocos2d-js" scheme="http://hjcenry.coding.me/tags/cocos2d-js/"/>
     
-      <category term="cvp" scheme="http://hjcenry.github.io/tags/cvp/"/>
+      <category term="cvp" scheme="http://hjcenry.coding.me/tags/cvp/"/>
     
   </entry>
   
   <entry>
     <title>Cocos2d-JS实现的贪吃蛇</title>
-    <link href="http://hjcenry.github.io/2016/05/16/Cocos2d-JS%E5%AE%9E%E7%8E%B0%E7%9A%84%E8%B4%AA%E5%90%83%E8%9B%87/"/>
-    <id>http://hjcenry.github.io/2016/05/16/Cocos2d-JS实现的贪吃蛇/</id>
+    <link href="http://hjcenry.coding.me/2016/05/16/Cocos2d-JS%E5%AE%9E%E7%8E%B0%E7%9A%84%E8%B4%AA%E5%90%83%E8%9B%87/"/>
+    <id>http://hjcenry.coding.me/2016/05/16/Cocos2d-JS实现的贪吃蛇/</id>
     <published>2016-05-16T07:38:00.000Z</published>
     <updated>2016-08-03T13:14:14.000Z</updated>
     
@@ -623,23 +624,23 @@
     
     </summary>
     
-      <category term="cocos2d-js" scheme="http://hjcenry.github.io/categories/cocos2d-js/"/>
+      <category term="cocos2d-js" scheme="http://hjcenry.coding.me/categories/cocos2d-js/"/>
     
     
-      <category term="cocos2d-js" scheme="http://hjcenry.github.io/tags/cocos2d-js/"/>
+      <category term="cocos2d-js" scheme="http://hjcenry.coding.me/tags/cocos2d-js/"/>
     
-      <category term="贪吃蛇" scheme="http://hjcenry.github.io/tags/%E8%B4%AA%E5%90%83%E8%9B%87/"/>
+      <category term="贪吃蛇" scheme="http://hjcenry.coding.me/tags/%E8%B4%AA%E5%90%83%E8%9B%87/"/>
     
   </entry>
   
   <entry>
     <title>CVP认证学习笔记--(何小成)骨骼动画的制作</title>
-    <link href="http://hjcenry.github.io/2016/05/10/CVP%E8%AE%A4%E8%AF%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0--(%E4%BD%95%E5%B0%8F%E6%88%90)%E9%AA%A8%E9%AA%BC%E5%8A%A8%E7%94%BB%E7%9A%84%E5%88%B6%E4%BD%9C/"/>
-    <id>http://hjcenry.github.io/2016/05/10/CVP认证学习笔记--(何小成)骨骼动画的制作/</id>
+    <link href="http://hjcenry.coding.me/2016/05/10/CVP%E8%AE%A4%E8%AF%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0--(%E4%BD%95%E5%B0%8F%E6%88%90)%E9%AA%A8%E9%AA%BC%E5%8A%A8%E7%94%BB%E7%9A%84%E5%88%B6%E4%BD%9C/"/>
+    <id>http://hjcenry.coding.me/2016/05/10/CVP认证学习笔记--(何小成)骨骼动画的制作/</id>
     <published>2016-05-10T14:44:00.000Z</published>
     <updated>2016-05-10T15:20:14.000Z</updated>
     
-    <content type="html"><![CDATA[<p>本文主要复习下骨骼动画的制作过程，<a href="http://hjcenry.github.io/2016/05/06/CVP%E8%AE%A4%E8%AF%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0--(%E4%BD%95%E5%B0%8F%E6%88%90)023--%E5%8A%A0%E8%BD%BD%E9%AA%A8%E9%AA%BC%E5%8A%A8%E7%94%BB/">上一篇文章</a>简单介绍了cocos中对于骨骼动画的使用，本文主要从骨骼动画制作的角度来讲解。<a id="more"></a></p>
+    <content type="html"><![CDATA[<p>本文主要复习下骨骼动画的制作过程，<a href="http://hjcenry.github.io/2016/05/06/CVP%E8%AE%A4%E8%AF%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0--(%E4%BD%95%E5%B0%8F%E6%88%90)023--%E5%8A%A0%E8%BD%BD%E9%AA%A8%E9%AA%BC%E5%8A%A8%E7%94%BB/" target="_blank" rel="external">上一篇文章</a>简单介绍了cocos中对于骨骼动画的使用，本文主要从骨骼动画制作的角度来讲解。<a id="more"></a></p>
 <h3 id="导入资源"><a href="#导入资源" class="headerlink" title="导入资源"></a>导入资源</h3><p>制作之前准备好所需要的图片资源，然后倒入到cocos studio中，如下图：<br><img src="http://cdn.cocimg.com/bbs/attachment/Fid_72/72_319828_1a202fb1ffd1025.png" alt="导入资源"></p>
 <h3 id="添加皮肤"><a href="#添加皮肤" class="headerlink" title="添加皮肤"></a>添加皮肤</h3><p>资源中的皮肤一个一个拖放到场景中，使小图片大致能拼出来一个完整的图片，如下图：<br><img src="http://cdn.cocimg.com/bbs/attachment/Fid_72/72_319828_55529c9535d5bb4.png" alt="添加皮肤"></p>
 <h3 id="添加骨骼"><a href="#添加骨骼" class="headerlink" title="添加骨骼"></a>添加骨骼</h3><p>根据人物的骨骼特征，为皮肤添加骨骼，如下图：<br><img src="http://cdn.cocimg.com/bbs/attachment/Fid_72/72_319828_3ad23acff07741b.png" alt="添加骨骼"></p>
@@ -655,19 +656,19 @@
     
     </summary>
     
-      <category term="cocos2d-js" scheme="http://hjcenry.github.io/categories/cocos2d-js/"/>
+      <category term="cocos2d-js" scheme="http://hjcenry.coding.me/categories/cocos2d-js/"/>
     
     
-      <category term="cocos2d-js" scheme="http://hjcenry.github.io/tags/cocos2d-js/"/>
+      <category term="cocos2d-js" scheme="http://hjcenry.coding.me/tags/cocos2d-js/"/>
     
-      <category term="cvp" scheme="http://hjcenry.github.io/tags/cvp/"/>
+      <category term="cvp" scheme="http://hjcenry.coding.me/tags/cvp/"/>
     
   </entry>
   
   <entry>
     <title>CVP认证学习笔记--(何小成)025--音乐和音效</title>
-    <link href="http://hjcenry.github.io/2016/05/07/CVP%E8%AE%A4%E8%AF%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0--(%E4%BD%95%E5%B0%8F%E6%88%90)025--%E9%9F%B3%E4%B9%90%E5%92%8C%E9%9F%B3%E6%95%88/"/>
-    <id>http://hjcenry.github.io/2016/05/07/CVP认证学习笔记--(何小成)025--音乐和音效/</id>
+    <link href="http://hjcenry.coding.me/2016/05/07/CVP%E8%AE%A4%E8%AF%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0--(%E4%BD%95%E5%B0%8F%E6%88%90)025--%E9%9F%B3%E4%B9%90%E5%92%8C%E9%9F%B3%E6%95%88/"/>
+    <id>http://hjcenry.coding.me/2016/05/07/CVP认证学习笔记--(何小成)025--音乐和音效/</id>
     <published>2016-05-07T07:51:00.000Z</published>
     <updated>2016-05-29T02:34:50.000Z</updated>
     
@@ -683,19 +684,19 @@
     
     </summary>
     
-      <category term="cocos2d-js" scheme="http://hjcenry.github.io/categories/cocos2d-js/"/>
+      <category term="cocos2d-js" scheme="http://hjcenry.coding.me/categories/cocos2d-js/"/>
     
     
-      <category term="cocos2d-js" scheme="http://hjcenry.github.io/tags/cocos2d-js/"/>
+      <category term="cocos2d-js" scheme="http://hjcenry.coding.me/tags/cocos2d-js/"/>
     
-      <category term="cvp" scheme="http://hjcenry.github.io/tags/cvp/"/>
+      <category term="cvp" scheme="http://hjcenry.coding.me/tags/cvp/"/>
     
   </entry>
   
   <entry>
     <title>CVP认证学习笔记--(何小成)024--粒子动画</title>
-    <link href="http://hjcenry.github.io/2016/05/07/CVP%E8%AE%A4%E8%AF%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0--(%E4%BD%95%E5%B0%8F%E6%88%90)024--%E7%B2%92%E5%AD%90%E5%8A%A8%E7%94%BB/"/>
-    <id>http://hjcenry.github.io/2016/05/07/CVP认证学习笔记--(何小成)024--粒子动画/</id>
+    <link href="http://hjcenry.coding.me/2016/05/07/CVP%E8%AE%A4%E8%AF%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0--(%E4%BD%95%E5%B0%8F%E6%88%90)024--%E7%B2%92%E5%AD%90%E5%8A%A8%E7%94%BB/"/>
+    <id>http://hjcenry.coding.me/2016/05/07/CVP认证学习笔记--(何小成)024--粒子动画/</id>
     <published>2016-05-06T16:58:00.000Z</published>
     <updated>2016-05-06T17:04:06.000Z</updated>
     
@@ -725,19 +726,19 @@
     
     </summary>
     
-      <category term="cocos2d-js" scheme="http://hjcenry.github.io/categories/cocos2d-js/"/>
+      <category term="cocos2d-js" scheme="http://hjcenry.coding.me/categories/cocos2d-js/"/>
     
     
-      <category term="cocos2d-js" scheme="http://hjcenry.github.io/tags/cocos2d-js/"/>
+      <category term="cocos2d-js" scheme="http://hjcenry.coding.me/tags/cocos2d-js/"/>
     
-      <category term="cvp" scheme="http://hjcenry.github.io/tags/cvp/"/>
+      <category term="cvp" scheme="http://hjcenry.coding.me/tags/cvp/"/>
     
   </entry>
   
   <entry>
     <title>CVP认证学习笔记--(何小成)023--加载骨骼动画</title>
-    <link href="http://hjcenry.github.io/2016/05/06/CVP%E8%AE%A4%E8%AF%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0--(%E4%BD%95%E5%B0%8F%E6%88%90)023--%E5%8A%A0%E8%BD%BD%E9%AA%A8%E9%AA%BC%E5%8A%A8%E7%94%BB/"/>
-    <id>http://hjcenry.github.io/2016/05/06/CVP认证学习笔记--(何小成)023--加载骨骼动画/</id>
+    <link href="http://hjcenry.coding.me/2016/05/06/CVP%E8%AE%A4%E8%AF%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0--(%E4%BD%95%E5%B0%8F%E6%88%90)023--%E5%8A%A0%E8%BD%BD%E9%AA%A8%E9%AA%BC%E5%8A%A8%E7%94%BB/"/>
+    <id>http://hjcenry.coding.me/2016/05/06/CVP认证学习笔记--(何小成)023--加载骨骼动画/</id>
     <published>2016-05-05T16:49:00.000Z</published>
     <updated>2016-05-06T16:58:32.000Z</updated>
     
@@ -758,19 +759,19 @@
     
     </summary>
     
-      <category term="cocos2d-js" scheme="http://hjcenry.github.io/categories/cocos2d-js/"/>
+      <category term="cocos2d-js" scheme="http://hjcenry.coding.me/categories/cocos2d-js/"/>
     
     
-      <category term="cocos2d-js" scheme="http://hjcenry.github.io/tags/cocos2d-js/"/>
+      <category term="cocos2d-js" scheme="http://hjcenry.coding.me/tags/cocos2d-js/"/>
     
-      <category term="cvp" scheme="http://hjcenry.github.io/tags/cvp/"/>
+      <category term="cvp" scheme="http://hjcenry.coding.me/tags/cvp/"/>
     
   </entry>
   
   <entry>
     <title>CVP认证学习笔记--(何小成)022--加载帧动画</title>
-    <link href="http://hjcenry.github.io/2016/05/05/CVP%E8%AE%A4%E8%AF%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0--(%E4%BD%95%E5%B0%8F%E6%88%90)022--%E5%8A%A0%E8%BD%BD%E5%B8%A7%E5%8A%A8%E7%94%BB/"/>
-    <id>http://hjcenry.github.io/2016/05/05/CVP认证学习笔记--(何小成)022--加载帧动画/</id>
+    <link href="http://hjcenry.coding.me/2016/05/05/CVP%E8%AE%A4%E8%AF%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0--(%E4%BD%95%E5%B0%8F%E6%88%90)022--%E5%8A%A0%E8%BD%BD%E5%B8%A7%E5%8A%A8%E7%94%BB/"/>
+    <id>http://hjcenry.coding.me/2016/05/05/CVP认证学习笔记--(何小成)022--加载帧动画/</id>
     <published>2016-05-04T16:05:00.000Z</published>
     <updated>2016-05-06T16:58:40.000Z</updated>
     
@@ -790,19 +791,19 @@
     
     </summary>
     
-      <category term="cocos2d-js" scheme="http://hjcenry.github.io/categories/cocos2d-js/"/>
+      <category term="cocos2d-js" scheme="http://hjcenry.coding.me/categories/cocos2d-js/"/>
     
     
-      <category term="cocos2d-js" scheme="http://hjcenry.github.io/tags/cocos2d-js/"/>
+      <category term="cocos2d-js" scheme="http://hjcenry.coding.me/tags/cocos2d-js/"/>
     
-      <category term="cvp" scheme="http://hjcenry.github.io/tags/cvp/"/>
+      <category term="cvp" scheme="http://hjcenry.coding.me/tags/cvp/"/>
     
   </entry>
   
   <entry>
     <title>CVP认证学习笔记--(何小成)021--纹理打包文件读取</title>
-    <link href="http://hjcenry.github.io/2016/04/30/CVP%E8%AE%A4%E8%AF%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0--(%E4%BD%95%E5%B0%8F%E6%88%90)021--%E7%BA%B9%E7%90%86%E6%89%93%E5%8C%85%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96/"/>
-    <id>http://hjcenry.github.io/2016/04/30/CVP认证学习笔记--(何小成)021--纹理打包文件读取/</id>
+    <link href="http://hjcenry.coding.me/2016/04/30/CVP%E8%AE%A4%E8%AF%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0--(%E4%BD%95%E5%B0%8F%E6%88%90)021--%E7%BA%B9%E7%90%86%E6%89%93%E5%8C%85%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96/"/>
+    <id>http://hjcenry.coding.me/2016/04/30/CVP认证学习笔记--(何小成)021--纹理打包文件读取/</id>
     <published>2016-04-30T07:46:00.000Z</published>
     <updated>2016-04-30T11:18:18.000Z</updated>
     
@@ -822,19 +823,19 @@
     
     </summary>
     
-      <category term="cocos2d-js" scheme="http://hjcenry.github.io/categories/cocos2d-js/"/>
+      <category term="cocos2d-js" scheme="http://hjcenry.coding.me/categories/cocos2d-js/"/>
     
     
-      <category term="cocos2d-js" scheme="http://hjcenry.github.io/tags/cocos2d-js/"/>
+      <category term="cocos2d-js" scheme="http://hjcenry.coding.me/tags/cocos2d-js/"/>
     
-      <category term="cvp" scheme="http://hjcenry.github.io/tags/cvp/"/>
+      <category term="cvp" scheme="http://hjcenry.coding.me/tags/cvp/"/>
     
   </entry>
   
   <entry>
     <title>微博开源框架Motan初体验</title>
-    <link href="http://hjcenry.github.io/2016/04/26/%E5%BE%AE%E5%8D%9A%E5%BC%80%E6%BA%90%E6%A1%86%E6%9E%B6Motan%E5%88%9D%E4%BD%93%E9%AA%8C/"/>
-    <id>http://hjcenry.github.io/2016/04/26/微博开源框架Motan初体验/</id>
+    <link href="http://hjcenry.coding.me/2016/04/26/%E5%BE%AE%E5%8D%9A%E5%BC%80%E6%BA%90%E6%A1%86%E6%9E%B6Motan%E5%88%9D%E4%BD%93%E9%AA%8C/"/>
+    <id>http://hjcenry.coding.me/2016/04/26/微博开源框架Motan初体验/</id>
     <published>2016-04-26T09:44:00.000Z</published>
     <updated>2016-04-26T14:21:12.000Z</updated>
     
@@ -878,7 +879,7 @@
 <h4 id="调用方调用服务"><a href="#调用方调用服务" class="headerlink" title="调用方调用服务"></a>调用方调用服务</h4><p>consul需要显示调用心跳开关注册到consul（zookeeper不需要）<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MotanSwitcherUtil.setSwitcher(ConsulConstants.NAMING_PROCESS_HEARTBEAT_SWITCHER, <span class="keyword">true</span>)</span><br></pre></td></tr></table></figure></p>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>我也是正好最近项目空闲，刚好又看到这么一则新闻，于是就动手了解了下，当然，我所做的只是浅层次的使用，至于更深层次的内容（如，跟dubbo等其他rpc框架的对比，集群上下线对zookeeper的影响等）还没来得及去研究，不过既然它曾经支撑过千亿的调用，那一定是经过实际运营检验的，作为搞技术的，也应该多去了解了解开源的东西，这里我想说一句，开源真好！<br>另外，以上demo代码我也传到了我的github上，欢迎交流学习：<br><a href="https://github.com/hjcenry/motan-demo" target="_blank" rel="external">https://github.com/hjcenry/motan-demo</a></p>
 <hr>
-<p><em>我的个人博客开通啦，每一篇文章都在简书跟个人博客同步，地址是：<a href="http://hjcenry.github.io">http://hjcenry.github.io</a></em></p>
+<p><em>我的个人博客开通啦，每一篇文章都在简书跟个人博客同步，地址是：<a href="http://hjcenry.github.io" target="_blank" rel="external">http://hjcenry.github.io</a></em></p>
 ]]></content>
     
     <summary type="html">
@@ -887,16 +888,16 @@
     
     </summary>
     
-      <category term="Java" scheme="http://hjcenry.github.io/categories/Java/"/>
+      <category term="Java" scheme="http://hjcenry.coding.me/categories/Java/"/>
     
     
-      <category term="Java" scheme="http://hjcenry.github.io/tags/Java/"/>
+      <category term="Java" scheme="http://hjcenry.coding.me/tags/Java/"/>
     
-      <category term="rpc" scheme="http://hjcenry.github.io/tags/rpc/"/>
+      <category term="rpc" scheme="http://hjcenry.coding.me/tags/rpc/"/>
     
-      <category term="Motan" scheme="http://hjcenry.github.io/tags/Motan/"/>
+      <category term="Motan" scheme="http://hjcenry.coding.me/tags/Motan/"/>
     
-      <category term="开源" scheme="http://hjcenry.github.io/tags/%E5%BC%80%E6%BA%90/"/>
+      <category term="开源" scheme="http://hjcenry.coding.me/tags/%E5%BC%80%E6%BA%90/"/>
     
   </entry>
   
