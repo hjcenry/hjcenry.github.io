@@ -529,13 +529,6 @@
   </url>
   
   <url>
-    <loc>http://www.hjcenry.com/tags/Python/</loc>
-    <lastmod>2020-10-11</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://www.hjcenry.com/tags/Linux/</loc>
     <lastmod>2020-10-11</lastmod>
     <changefreq>daily</changefreq>
@@ -550,7 +543,7 @@
   </url>
   
   <url>
-    <loc>http://www.hjcenry.com/tags/2048/</loc>
+    <loc>http://www.hjcenry.com/tags/Python/</loc>
     <lastmod>2020-10-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -564,7 +557,7 @@
   </url>
   
   <url>
-    <loc>http://www.hjcenry.com/tags/%E8%B4%AA%E5%90%83%E8%9B%87/</loc>
+    <loc>http://www.hjcenry.com/tags/2048/</loc>
     <lastmod>2020-10-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -593,6 +586,13 @@
   
   <url>
     <loc>http://www.hjcenry.com/tags/SLG/</loc>
+    <lastmod>2020-10-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.hjcenry.com/tags/%E8%B4%AA%E5%90%83%E8%9B%87/</loc>
     <lastmod>2020-10-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
