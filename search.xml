@@ -1660,7 +1660,8 @@ director对场景的管理是以堆栈的数据结构来管理，简单来说就
 <li>Netty对TCP相关参数的配置和具体含义</li>
 <li>Netty对Epoll的封装</li>
 <li>Netty的优雅关闭<a id="more"></a>
-<h1 id="Netty相关"><a href="#Netty相关" class="headerlink" title="Netty相关"></a>Netty相关</h1></li>
+
+</li>
 </ul>
 <h2 id="一、Reactor模式和Netty线程模型"><a href="#一、Reactor模式和Netty线程模型" class="headerlink" title="一、Reactor模式和Netty线程模型"></a>一、Reactor模式和Netty线程模型</h2><p>客户端连接数的限制</p>
 <ul>
