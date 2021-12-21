@@ -203,6 +203,186 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://www.hjcenry.com/2021/12/21/Java%E4%B8%AD%E4%BD%BF%E7%94%A8KCP%E5%8D%8F%E8%AE%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Henry He">
+      <meta itemprop="description" content="我们不生产代码，我们只是API的搬运工">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Henry Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/12/21/Java%E4%B8%AD%E4%BD%BF%E7%94%A8KCP%E5%8D%8F%E8%AE%AE/" class="post-title-link" itemprop="url">Java中使用KCP协议</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-12-21 14:49:33 / 修改时间：22:51:22" itemprop="dateCreated datePublished" datetime="2021-12-21T14:49:33+08:00">2021-12-21</time>
+            </span>
+
+          
+            <span id="/2021/12/21/Java%E4%B8%AD%E4%BD%BF%E7%94%A8KCP%E5%8D%8F%E8%AE%AE/" class="post-meta-item leancloud_visitors" data-flag-title="Java中使用KCP协议" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">评论：</span>
+    
+    <a title="valine" href="/2021/12/21/Java%E4%B8%AD%E4%BD%BF%E7%94%A8KCP%E5%8D%8F%E8%AE%AE/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/12/21/Java%E4%B8%AD%E4%BD%BF%E7%94%A8KCP%E5%8D%8F%E8%AE%AE/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <blockquote>
+<p>传统游戏项目一般使用TCP协议进行通信，得益于它的稳定和可靠，不过在网络不稳定的情况下，会出现丢包严重。<br>不过近期有不少基于UDP的应用层协议，声称对UDP的不可靠进行了改造，这意味着我们既可以享受网络层提供稳定可靠的服务，又可以享受它的速度。<br><strong>KCP</strong>就是这样的一个协议</p>
+</blockquote>
+<p>不过网上说的再天花乱坠，我们也得亲自调研，分析源码和它的机制，并测试它的性能，是否满足项目上线要求。本文从C版本的源码入手理解KCP的机制，再研究各种Java版本的实现</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/12/21/Java%E4%B8%AD%E4%BD%BF%E7%94%A8KCP%E5%8D%8F%E8%AE%AE/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://www.hjcenry.com/2021/12/21/Java%E4%B8%8ELua%E7%9B%B8%E4%BA%92%E8%B0%83%E7%94%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Henry He">
+      <meta itemprop="description" content="我们不生产代码，我们只是API的搬运工">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Henry Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/12/21/Java%E4%B8%8ELua%E7%9B%B8%E4%BA%92%E8%B0%83%E7%94%A8/" class="post-title-link" itemprop="url">Java与Lua相互调用</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-12-21 13:45:00 / 修改时间：21:45:40" itemprop="dateCreated datePublished" datetime="2021-12-21T13:45:00+08:00">2021-12-21</time>
+            </span>
+
+          
+            <span id="/2021/12/21/Java%E4%B8%8ELua%E7%9B%B8%E4%BA%92%E8%B0%83%E7%94%A8/" class="post-meta-item leancloud_visitors" data-flag-title="Java与Lua相互调用" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">评论：</span>
+    
+    <a title="valine" href="/2021/12/21/Java%E4%B8%8ELua%E7%9B%B8%E4%BA%92%E8%B0%83%E7%94%A8/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/12/21/Java%E4%B8%8ELua%E7%9B%B8%E4%BA%92%E8%B0%83%E7%94%A8/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Java与Lua相互调用案例比较少，因此项目使用需要做详细的性能测试，本内容只做粗略测试。</p>
+<blockquote>
+<p>目前已完成初版Lua-Java调用框架开发，后期有时间准备把框架进行抽象，并开源出来，感兴趣的小伙伴欢迎关注下。</p>
+</blockquote>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/12/21/Java%E4%B8%8ELua%E7%9B%B8%E4%BA%92%E8%B0%83%E7%94%A8/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://www.hjcenry.com/2021/09/16/%E6%B8%B8%E6%88%8F%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%AD%E7%9A%84Netty%E5%BA%94%E7%94%A8%E4%BB%A5%E5%8F%8A%E6%BA%90%E7%A0%81%E6%B5%85%E6%9E%90/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -234,7 +414,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-09-17 00:52:45" itemprop="dateModified" datetime="2021-09-17T00:52:45+08:00">2021-09-17</time>
+                <time title="修改时间：2021-12-21 21:45:43" itemprop="dateModified" datetime="2021-12-21T21:45:43+08:00">2021-12-21</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1023,204 +1203,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://www.hjcenry.com/2016/10/22/SLG%E6%89%8B%E6%B8%B8Java%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E6%96%B9%E6%A1%88/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Henry He">
-      <meta itemprop="description" content="我们不生产代码，我们只是API的搬运工">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Henry Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2016/10/22/SLG%E6%89%8B%E6%B8%B8Java%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E6%96%B9%E6%A1%88/" class="post-title-link" itemprop="url">SLG手游Java服务器数据管理方案</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2016-10-22 15:25:00 / 修改时间：23:37:00" itemprop="dateCreated datePublished" datetime="2016-10-22T15:25:00+08:00">2016-10-22</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2016/10/22/SLG%E6%89%8B%E6%B8%B8Java%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E6%96%B9%E6%A1%88/" class="post-meta-item leancloud_visitors" data-flag-title="SLG手游Java服务器数据管理方案" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">评论：</span>
-    
-    <a title="valine" href="/2016/10/22/SLG%E6%89%8B%E6%B8%B8Java%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E6%96%B9%E6%A1%88/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2016/10/22/SLG%E6%89%8B%E6%B8%B8Java%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E6%96%B9%E6%A1%88/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <ul>
-<li><code>文章版权归腾讯GAD所有，禁止匿名转载；禁止商业使用；禁止个人使用。</code></li>
-</ul>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>这一年左右的时间，我参与并完成了一款SLG手游的研发，我负责游戏的服务端研发。这是一款以三国为题材的游戏，除了有三国名将的卡牌养成、多种多样装备养成、PVE，玩家竞技场等常见玩法外，我们的游戏的主打特色是国战和军团战，目前我们正在进行国战部分的开发和优化，军团战部分仍在策划中。
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2016/10/22/SLG%E6%89%8B%E6%B8%B8Java%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E6%96%B9%E6%A1%88/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://www.hjcenry.com/2016/09/04/SLG%E6%89%8B%E6%B8%B8Java%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E2%80%94%E2%80%94%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Henry He">
-      <meta itemprop="description" content="我们不生产代码，我们只是API的搬运工">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Henry Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2016/09/04/SLG%E6%89%8B%E6%B8%B8Java%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E2%80%94%E2%80%94%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86/" class="post-title-link" itemprop="url">SLG手游Java服务器的设计与开发——数据管理</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2016-09-04 10:13:00 / 修改时间：20:01:34" itemprop="dateCreated datePublished" datetime="2016-09-04T10:13:00+08:00">2016-09-04</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2016/09/04/SLG%E6%89%8B%E6%B8%B8Java%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E2%80%94%E2%80%94%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86/" class="post-meta-item leancloud_visitors" data-flag-title="SLG手游Java服务器的设计与开发——数据管理" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">评论：</span>
-    
-    <a title="valine" href="/2016/09/04/SLG%E6%89%8B%E6%B8%B8Java%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E2%80%94%E2%80%94%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2016/09/04/SLG%E6%89%8B%E6%B8%B8Java%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E2%80%94%E2%80%94%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <ul>
-<li><code>文章版权归腾讯GAD所有，禁止匿名转载；禁止商业使用；禁止个人使用。</code></li>
-</ul>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>上文介绍了我们的SLG手游的服务器架构设计以及网络通信部分，本文介绍数据管理部分，在数据存储方面，我选择了Mysql、Memcache和Redis，利用这三种数据库各自的优势，各自发挥所长，在项目中有着不同的应用。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2016/09/04/SLG%E6%89%8B%E6%B8%B8Java%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%BC%80%E5%8F%91%E2%80%94%E2%80%94%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1292,7 +1274,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">55</span>
+          <span class="site-state-item-count">57</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

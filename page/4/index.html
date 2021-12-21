@@ -203,6 +203,212 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://www.hjcenry.com/2016/04/23/CVP%E8%AE%A4%E8%AF%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0--(%E4%BD%95%E5%B0%8F%E6%88%90)017--%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90%E7%9A%84%E5%BC%82%E6%AD%A5%E5%8A%A0%E8%BD%BD/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Henry He">
+      <meta itemprop="description" content="我们不生产代码，我们只是API的搬运工">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Henry Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2016/04/23/CVP%E8%AE%A4%E8%AF%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0--(%E4%BD%95%E5%B0%8F%E6%88%90)017--%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90%E7%9A%84%E5%BC%82%E6%AD%A5%E5%8A%A0%E8%BD%BD/" class="post-title-link" itemprop="url">CVP认证学习笔记--(何小成)017--图片资源的异步加载</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2016-04-23 23:09:00" itemprop="dateCreated datePublished" datetime="2016-04-23T23:09:00+08:00">2016-04-23</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2016-04-30 15:47:08" itemprop="dateModified" datetime="2016-04-30T15:47:08+08:00">2016-04-30</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/cocos2d-js/" itemprop="url" rel="index"><span itemprop="name">cocos2d-js</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2016/04/23/CVP%E8%AE%A4%E8%AF%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0--(%E4%BD%95%E5%B0%8F%E6%88%90)017--%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90%E7%9A%84%E5%BC%82%E6%AD%A5%E5%8A%A0%E8%BD%BD/" class="post-meta-item leancloud_visitors" data-flag-title="CVP认证学习笔记--(何小成)017--图片资源的异步加载" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">评论：</span>
+    
+    <a title="valine" href="/2016/04/23/CVP%E8%AE%A4%E8%AF%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0--(%E4%BD%95%E5%B0%8F%E6%88%90)017--%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90%E7%9A%84%E5%BC%82%E6%AD%A5%E5%8A%A0%E8%BD%BD/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2016/04/23/CVP%E8%AE%A4%E8%AF%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0--(%E4%BD%95%E5%B0%8F%E6%88%90)017--%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90%E7%9A%84%E5%BC%82%E6%AD%A5%E5%8A%A0%E8%BD%BD/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="API"><a href="#API" class="headerlink" title="API"></a>API</h3><p>本节课讲了cocos中图片资源的异步加载，主要涉及到的api如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cc.textureCache.addImageAsync(allpic[n],<span class="built_in">this</span>.callback,<span class="built_in">this</span>);</span><br></pre></td></tr></table></figure>
+<p>以上api通过纹理缓存来异步加载资源，实际上每次调试启动的时候的那个进度条也是一个异步加载，这样可以让资源在每个场景需要用到的时候来进行加载，而不用一进游戏就全部加载完成，提高资源利用率。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2016/04/23/CVP%E8%AE%A4%E8%AF%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0--(%E4%BD%95%E5%B0%8F%E6%88%90)017--%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90%E7%9A%84%E5%BC%82%E6%AD%A5%E5%8A%A0%E8%BD%BD/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://www.hjcenry.com/2016/04/23/CVP%E8%AE%A4%E8%AF%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0--(%E4%BD%95%E5%B0%8F%E6%88%90)016--%E5%AE%9E%E7%8E%B0%E7%BA%B9%E7%90%86%E7%BC%93%E5%AD%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Henry He">
+      <meta itemprop="description" content="我们不生产代码，我们只是API的搬运工">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Henry Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2016/04/23/CVP%E8%AE%A4%E8%AF%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0--(%E4%BD%95%E5%B0%8F%E6%88%90)016--%E5%AE%9E%E7%8E%B0%E7%BA%B9%E7%90%86%E7%BC%93%E5%AD%98/" class="post-title-link" itemprop="url">CVP认证学习笔记--(何小成)016--实现纹理缓存</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2016-04-23 00:49:00" itemprop="dateCreated datePublished" datetime="2016-04-23T00:49:00+08:00">2016-04-23</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2016-04-24 22:56:20" itemprop="dateModified" datetime="2016-04-24T22:56:20+08:00">2016-04-24</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/cocos2d-js/" itemprop="url" rel="index"><span itemprop="name">cocos2d-js</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2016/04/23/CVP%E8%AE%A4%E8%AF%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0--(%E4%BD%95%E5%B0%8F%E6%88%90)016--%E5%AE%9E%E7%8E%B0%E7%BA%B9%E7%90%86%E7%BC%93%E5%AD%98/" class="post-meta-item leancloud_visitors" data-flag-title="CVP认证学习笔记--(何小成)016--实现纹理缓存" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">评论：</span>
+    
+    <a title="valine" href="/2016/04/23/CVP%E8%AE%A4%E8%AF%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0--(%E4%BD%95%E5%B0%8F%E6%88%90)016--%E5%AE%9E%E7%8E%B0%E7%BA%B9%E7%90%86%E7%BC%93%E5%AD%98/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2016/04/23/CVP%E8%AE%A4%E8%AF%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0--(%E4%BD%95%E5%B0%8F%E6%88%90)016--%E5%AE%9E%E7%8E%B0%E7%BA%B9%E7%90%86%E7%BC%93%E5%AD%98/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>本节课内容讲的精灵的纹理缓存，由于在手机上的资源是非常宝贵的，遇到多个相同图片的精灵，我们不可能一个一个绘制，cocos中提供了纹理缓存机制，在程序预加载之后，就已经放在了纹理缓存中，而我们new cc.Sprite的时候，
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2016/04/23/CVP%E8%AE%A4%E8%AF%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0--(%E4%BD%95%E5%B0%8F%E6%88%90)016--%E5%AE%9E%E7%8E%B0%E7%BA%B9%E7%90%86%E7%BC%93%E5%AD%98/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://www.hjcenry.com/2016/04/21/CVP%E8%AE%A4%E8%AF%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0--(%E4%BD%95%E5%B0%8F%E6%88%90)015--%E5%AE%9E%E7%8E%B0%E7%BB%98%E5%9B%BE%E8%8A%82%E7%82%B9/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1017,210 +1223,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://www.hjcenry.com/2016/04/16/CVP%E8%AE%A4%E8%AF%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0--(%E4%BD%95%E5%B0%8F%E6%88%90)006--%E5%AE%9E%E7%8E%B0%E5%9C%BA%E6%99%AF%E5%88%87%E6%8D%A2%E7%89%B9%E6%95%88/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Henry He">
-      <meta itemprop="description" content="我们不生产代码，我们只是API的搬运工">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Henry Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2016/04/16/CVP%E8%AE%A4%E8%AF%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0--(%E4%BD%95%E5%B0%8F%E6%88%90)006--%E5%AE%9E%E7%8E%B0%E5%9C%BA%E6%99%AF%E5%88%87%E6%8D%A2%E7%89%B9%E6%95%88/" class="post-title-link" itemprop="url">CVP认证学习笔记--(何小成)006--实现场景切换特效</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2016-04-16 00:31:00" itemprop="dateCreated datePublished" datetime="2016-04-16T00:31:00+08:00">2016-04-16</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2016-04-24 23:02:48" itemprop="dateModified" datetime="2016-04-24T23:02:48+08:00">2016-04-24</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/cocos2d-js/" itemprop="url" rel="index"><span itemprop="name">cocos2d-js</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2016/04/16/CVP%E8%AE%A4%E8%AF%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0--(%E4%BD%95%E5%B0%8F%E6%88%90)006--%E5%AE%9E%E7%8E%B0%E5%9C%BA%E6%99%AF%E5%88%87%E6%8D%A2%E7%89%B9%E6%95%88/" class="post-meta-item leancloud_visitors" data-flag-title="CVP认证学习笔记--(何小成)006--实现场景切换特效" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">评论：</span>
-    
-    <a title="valine" href="/2016/04/16/CVP%E8%AE%A4%E8%AF%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0--(%E4%BD%95%E5%B0%8F%E6%88%90)006--%E5%AE%9E%E7%8E%B0%E5%9C%BA%E6%99%AF%E5%88%87%E6%8D%A2%E7%89%B9%E6%95%88/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2016/04/16/CVP%E8%AE%A4%E8%AF%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0--(%E4%BD%95%E5%B0%8F%E6%88%90)006--%E5%AE%9E%E7%8E%B0%E5%9C%BA%E6%99%AF%E5%88%87%E6%8D%A2%E7%89%B9%E6%95%88/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>在上节实现了场景切换之后，本节内容就是了解一些场景切换的特效，个人感觉，实际项目中，可能实际用到的特效就那么几个，因为同一款游戏中，为了保持风格一致性，不可能用太多种类的特效，所以特效这块重点还是要了解其使用方法，
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2016/04/16/CVP%E8%AE%A4%E8%AF%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0--(%E4%BD%95%E5%B0%8F%E6%88%90)006--%E5%AE%9E%E7%8E%B0%E5%9C%BA%E6%99%AF%E5%88%87%E6%8D%A2%E7%89%B9%E6%95%88/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://www.hjcenry.com/2016/04/15/%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9E%B6%E6%9E%84%E6%96%87%E6%A1%A3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Henry He">
-      <meta itemprop="description" content="我们不生产代码，我们只是API的搬运工">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Henry Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2016/04/15/%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9E%B6%E6%9E%84%E6%96%87%E6%A1%A3/" class="post-title-link" itemprop="url">服务器架构文档</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2016-04-15 16:36:00" itemprop="dateCreated datePublished" datetime="2016-04-15T16:36:00+08:00">2016-04-15</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2016-04-24 20:02:14" itemprop="dateModified" datetime="2016-04-24T20:02:14+08:00">2016-04-24</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2016/04/15/%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9E%B6%E6%9E%84%E6%96%87%E6%A1%A3/" class="post-meta-item leancloud_visitors" data-flag-title="服务器架构文档" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">评论：</span>
-    
-    <a title="valine" href="/2016/04/15/%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9E%B6%E6%9E%84%E6%96%87%E6%A1%A3/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2016/04/15/%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9E%B6%E6%9E%84%E6%96%87%E6%A1%A3/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>不少同学或朋友都问过我，Java做游戏服务器跟Java web有什么不同，趁着这次这个游戏差不多完工，我写了一个服务器架构的文档，当然，每个人都能设计不同的架构，有好的有坏的，我这里给的只是我个
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2016/04/15/%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9E%B6%E6%9E%84%E6%96%87%E6%A1%A3/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1292,7 +1294,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">55</span>
+          <span class="site-state-item-count">57</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
