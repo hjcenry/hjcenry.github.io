@@ -31,8 +31,12 @@
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1472037-1bc9b2ec7f2070cd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1472037-3697f583f34cc82b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="article:published_time" content="2021-12-21T06:49:33.000Z">
-<meta property="article:modified_time" content="2021-12-21T14:51:22.453Z">
+<meta property="article:modified_time" content="2021-12-22T14:23:04.421Z">
 <meta property="article:author" content="Henry He">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="游戏服务器">
+<meta property="article:tag" content="网络">
+<meta property="article:tag" content="KCP">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/1472037-1bc9b2ec7f2070cd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
@@ -231,9 +235,24 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-12-21 14:49:33 / 修改时间：22:51:22" itemprop="dateCreated datePublished" datetime="2021-12-21T14:49:33+08:00">2021-12-21</time>
+              <time title="创建时间：2021-12-21 14:49:33" itemprop="dateCreated datePublished" datetime="2021-12-21T14:49:33+08:00">2021-12-21</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-12-22 22:23:04" itemprop="dateModified" datetime="2021-12-22T22:23:04+08:00">2021-12-22</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+                </span>
             </span>
 
           
@@ -401,7 +420,9 @@
 <li><strong>发送</strong><br>ikcp_send -&gt; ikcp_update -&gt; ikcp_output<br>ikcp_send：上层调用发送接口，把数据根据mss值进行分片，设置分包编号，放到snd_queue队尾<br>ikcp_flush：发送数据接口，根据对端窗口大小，拷贝snd_queue的数据到snd_buf，遍历snd_buf，满足条件则调用output回调（调用网络层的发送）</li>
 <li><strong>接收</strong><br>ikcp_input -&gt; ikcp_update -&gt; ikcp_recv<br>ikcp_input：解析上层输入数据，拷贝rcv_buf到rcv_queue<br>ikcp_recv：数据接收接口，上层从rcv_queue中复制数据到网络层buffer</li>
 </ul>
-<h1 id="五、Java版本"><a href="#五、Java版本" class="headerlink" title="五、Java版本"></a>五、Java版本</h1><p>目前github上有几个高star的java版本实现，选取最高的三个进行分析</p>
+<h1 id="五、Java版本"><a href="#五、Java版本" class="headerlink" title="五、Java版本"></a>五、Java版本</h1><blockquote>
+<p>从源码来看，作者对于KCP的设计仅仅是应用层的通信管理，对内是数据和连接管理，对外是上层需要调用的接口，所以理论上要在Java中使用，核心逻辑部分照着翻译成Java版本，在网络层实现一套KCP的调度即可。<br>实际调研看来，github上确实已有不上已经实现的版本，其中有不少代码实现非常优秀的版本，有着良好的封装，优秀的线程模型管理，各种附加优化等等。本着不重复造轮子的思想（对，就是懒），我们完全可以直接采用大佬们的作品，避开大佬们踩过的坑。<br>目前github上有几个高star的java版本实现，选取最高的三个进行分析</p>
+</blockquote>
 <h2 id="1-https-github-com-szhnet-kcp-netty-git（star-212）"><a href="#1-https-github-com-szhnet-kcp-netty-git（star-212）" class="headerlink" title="1. https://github.com/szhnet/kcp-netty.git（star:212）"></a>1. <a target="_blank" rel="noopener" href="https://github.com/szhnet/kcp-netty.git%EF%BC%88star:212%EF%BC%89">https://github.com/szhnet/kcp-netty.git（star:212）</a></h2><p>实现原理：</p>
 <blockquote>
 <p>1.KCP逻辑是源码的Java翻译版（一模一样）<br>2.UkcpServerChannel继承ServerChannel，UkcpServerBootStrap<br>3.用Boss线程<em>EventLoopGroup的read事件来驱动KCP逻辑</em></p>
@@ -472,6 +493,12 @@
 
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Java/" rel="tag"># Java</a>
+              <a href="/tags/%E6%B8%B8%E6%88%8F%E6%9C%8D%E5%8A%A1%E5%99%A8/" rel="tag"># 游戏服务器</a>
+              <a href="/tags/%E7%BD%91%E7%BB%9C/" rel="tag"># 网络</a>
+              <a href="/tags/KCP/" rel="tag"># KCP</a>
+          </div>
 
         
 
@@ -482,7 +509,10 @@
     <a href="/2021/12/21/Java%E4%B8%8ELua%E7%9B%B8%E4%BA%92%E8%B0%83%E7%94%A8/" rel="prev" title="Java与Lua相互调用">
       <i class="fa fa-chevron-left"></i> Java与Lua相互调用
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2021/12/22/%E6%88%91%E7%9A%8430%E5%B2%81/" rel="next" title="我的30岁">
+      我的30岁 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -558,7 +588,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">57</span>
+          <span class="site-state-item-count">58</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -571,7 +601,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">30</span>
+        <span class="site-state-item-count">33</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

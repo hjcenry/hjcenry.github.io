@@ -203,6 +203,108 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://www.hjcenry.com/2016/04/17/CVP%E8%AE%A4%E8%AF%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0--(%E4%BD%95%E5%B0%8F%E6%88%90)007--%E8%8A%82%E7%82%B9%E7%9A%84%E9%94%9A%E7%82%B9%E5%92%8C%E5%9D%90%E6%A0%87/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Henry He">
+      <meta itemprop="description" content="我们不生产代码，我们只是API的搬运工">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Henry Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2016/04/17/CVP%E8%AE%A4%E8%AF%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0--(%E4%BD%95%E5%B0%8F%E6%88%90)007--%E8%8A%82%E7%82%B9%E7%9A%84%E9%94%9A%E7%82%B9%E5%92%8C%E5%9D%90%E6%A0%87/" class="post-title-link" itemprop="url">CVP认证学习笔记--(何小成)007--节点的锚点和坐标</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2016-04-17 12:06:00" itemprop="dateCreated datePublished" datetime="2016-04-17T12:06:00+08:00">2016-04-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2016-04-24 23:02:34" itemprop="dateModified" datetime="2016-04-24T23:02:34+08:00">2016-04-24</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/cocos2d-js/" itemprop="url" rel="index"><span itemprop="name">cocos2d-js</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2016/04/17/CVP%E8%AE%A4%E8%AF%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0--(%E4%BD%95%E5%B0%8F%E6%88%90)007--%E8%8A%82%E7%82%B9%E7%9A%84%E9%94%9A%E7%82%B9%E5%92%8C%E5%9D%90%E6%A0%87/" class="post-meta-item leancloud_visitors" data-flag-title="CVP认证学习笔记--(何小成)007--节点的锚点和坐标" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">评论：</span>
+    
+    <a title="valine" href="/2016/04/17/CVP%E8%AE%A4%E8%AF%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0--(%E4%BD%95%E5%B0%8F%E6%88%90)007--%E8%8A%82%E7%82%B9%E7%9A%84%E9%94%9A%E7%82%B9%E5%92%8C%E5%9D%90%E6%A0%87/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2016/04/17/CVP%E8%AE%A4%E8%AF%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0--(%E4%BD%95%E5%B0%8F%E6%88%90)007--%E8%8A%82%E7%82%B9%E7%9A%84%E9%94%9A%E7%82%B9%E5%92%8C%E5%9D%90%E6%A0%87/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>本节内容讲了cocos中一个比较重要的概念——锚点，锚点按照我的理解，就是这个图形的中心点，而图形中所有的控件的位置，都是根据这个锚点位置的偏移量。在Cocos中，图层的锚点是图层的左下角，而Node的锚点，则是在Node的正中心，
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2016/04/17/CVP%E8%AE%A4%E8%AF%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0--(%E4%BD%95%E5%B0%8F%E6%88%90)007--%E8%8A%82%E7%82%B9%E7%9A%84%E9%94%9A%E7%82%B9%E5%92%8C%E5%9D%90%E6%A0%87/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://www.hjcenry.com/2016/04/16/CVP%E8%AE%A4%E8%AF%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0--(%E4%BD%95%E5%B0%8F%E6%88%90)006--%E5%AE%9E%E7%8E%B0%E5%9C%BA%E6%99%AF%E5%88%87%E6%8D%A2%E7%89%B9%E6%95%88/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1119,108 +1221,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://www.hjcenry.com/2016/02/18/Java%E8%AF%BB%E5%8F%96CSV%E5%92%8CXML%E6%96%87%E4%BB%B6%E6%96%B9%E6%B3%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Henry He">
-      <meta itemprop="description" content="我们不生产代码，我们只是API的搬运工">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Henry Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2016/02/18/Java%E8%AF%BB%E5%8F%96CSV%E5%92%8CXML%E6%96%87%E4%BB%B6%E6%96%B9%E6%B3%95/" class="post-title-link" itemprop="url">Java读取CSV和XML文件方法</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2016-02-18 15:59:00" itemprop="dateCreated datePublished" datetime="2016-02-18T15:59:00+08:00">2016-02-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2016-04-23 00:57:04" itemprop="dateModified" datetime="2016-04-23T00:57:04+08:00">2016-04-23</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2016/02/18/Java%E8%AF%BB%E5%8F%96CSV%E5%92%8CXML%E6%96%87%E4%BB%B6%E6%96%B9%E6%B3%95/" class="post-meta-item leancloud_visitors" data-flag-title="Java读取CSV和XML文件方法" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">评论：</span>
-    
-    <a title="valine" href="/2016/02/18/Java%E8%AF%BB%E5%8F%96CSV%E5%92%8CXML%E6%96%87%E4%BB%B6%E6%96%B9%E6%B3%95/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2016/02/18/Java%E8%AF%BB%E5%8F%96CSV%E5%92%8CXML%E6%96%87%E4%BB%B6%E6%96%B9%E6%B3%95/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>游戏开发中，读取策划给的配置表是必不可少的，我在之前公司，策划给的是xml表来读取，现在公司策划给的是CSV表来读取，其实大同小异，也并不是什么难点，我就简单分享下Java如何读取XML文件和CSV文件。以下工具类可随意拿去使用。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2016/02/18/Java%E8%AF%BB%E5%8F%96CSV%E5%92%8CXML%E6%96%87%E4%BB%B6%E6%96%B9%E6%B3%95/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1292,7 +1292,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">57</span>
+          <span class="site-state-item-count">58</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1305,7 +1305,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">30</span>
+        <span class="site-state-item-count">33</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
