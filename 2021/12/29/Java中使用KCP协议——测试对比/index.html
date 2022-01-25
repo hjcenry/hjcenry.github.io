@@ -21,12 +21,12 @@
     var CONFIG = {"hostname":"www.hjcenry.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":{"valine":{"text":"加载评论中","order":-1}},"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="上一篇文章简单介绍了KCP基本的机制和原理，以及github上的三种java版本。但是上次留了一个小小的坑，缺少了性能测试部分。这几天通过写测试服务器和测试客户端，简单测了一下TCP和KCP分别在内网和外网的延迟。 一. Java版KCP上一篇文章介绍的github的三种java版本，对比之下，我最终选择了 这个版本 进行测试。不过当我测完之后，发现这个版本的实现有个小小的缺陷：虽然它底层也是Ne">
+  <meta name="description" content="上一篇文章简单介绍了KCP基本的机制和原理，以及github上的三种java版本。但是上次留了一个小小的坑，缺少了性能测试部分。这几天通过写测试服务器和测试客户端，简单测了一下TCP和KCP分别在内网和外网的延迟。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java中使用KCP协议——性能测试及应用">
 <meta property="og:url" content="http://www.hjcenry.com/2021/12/29/Java%E4%B8%AD%E4%BD%BF%E7%94%A8KCP%E5%8D%8F%E8%AE%AE%E2%80%94%E2%80%94%E6%B5%8B%E8%AF%95%E5%AF%B9%E6%AF%94/index.html">
 <meta property="og:site_name" content="Henry Blog">
-<meta property="og:description" content="上一篇文章简单介绍了KCP基本的机制和原理，以及github上的三种java版本。但是上次留了一个小小的坑，缺少了性能测试部分。这几天通过写测试服务器和测试客户端，简单测了一下TCP和KCP分别在内网和外网的延迟。 一. Java版KCP上一篇文章介绍的github的三种java版本，对比之下，我最终选择了 这个版本 进行测试。不过当我测完之后，发现这个版本的实现有个小小的缺陷：虽然它底层也是Ne">
+<meta property="og:description" content="上一篇文章简单介绍了KCP基本的机制和原理，以及github上的三种java版本。但是上次留了一个小小的坑，缺少了性能测试部分。这几天通过写测试服务器和测试客户端，简单测了一下TCP和KCP分别在内网和外网的延迟。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1472037-06d85dff9544c671?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1472037-9a6f5f2d42fa1421?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
@@ -42,7 +42,7 @@
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1472037-30e3004a075497e4?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1472037-2a46ae089e80c1a0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="article:published_time" content="2021-12-29T05:04:20.000Z">
-<meta property="article:modified_time" content="2021-12-29T15:56:14.597Z">
+<meta property="article:modified_time" content="2022-01-25T15:06:27.301Z">
 <meta property="article:author" content="Henry He">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="游戏服务器">
@@ -246,10 +246,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-12-29 13:04:20 / 修改时间：23:56:14" itemprop="dateCreated datePublished" datetime="2021-12-29T13:04:20+08:00">2021-12-29</time>
+              <time title="创建时间：2021-12-29 13:04:20" itemprop="dateCreated datePublished" datetime="2021-12-29T13:04:20+08:00">2021-12-29</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-01-25 23:06:27" itemprop="dateModified" datetime="2022-01-25T23:06:27+08:00">2022-01-25</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -293,6 +299,8 @@
 
       
         <p>上一篇文章简单介绍了KCP基本的机制和原理，以及github上的三种java版本。但是上次留了一个小小的坑，缺少了性能测试部分。<br>这几天通过写测试服务器和测试客户端，简单测了一下TCP和KCP分别在内网和外网的延迟。</p>
+<a id="more"></a>
+
 <h1 id="一-Java版KCP"><a href="#一-Java版KCP" class="headerlink" title="一. Java版KCP"></a>一. Java版KCP</h1><p>上一篇文章介绍的github的三种java版本，对比之下，我最终选择了 <a target="_blank" rel="noopener" href="https://github.com/l42111996/java-Kcp.git">这个版本</a> 进行测试。<br>不过当我测完之后，发现这个版本的实现有个小小的缺陷：虽然它底层也是Netty的实现版本，但是它的底层实在封装的太严实了，而对我们设计中以下两点不太友好：</p>
 <ol>
 <li>由于我们打算根据C原版作者的建议使用TCP/KCP双通道共同运作，原TCPServer我们是基于Netty实现的，有一套相对完整的抽象接口，本来我打算把KCPServer也通过封装和抽象集成到这套接口里面，但这套库的对外接口全部是自己封装的，完全不涉及Netty，以致于两套Server完全是不一样的实现思路。<strong>解决办法就是把KCP的层级做的高一点，就不太好利用一些公共方法了，可能还需要再做一层抽象和封装。</strong></li>
@@ -556,7 +564,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">35</span>
+        <span class="site-state-item-count">36</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
