@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.hjcenry.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":{"valine":{"text":"加载评论中","order":-1}},"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="上一篇文章简单介绍了KCP基本的机制和原理，以及github上的三种java版本。但是上次留了一个小小的坑，缺少了性能测试部分。这几天通过写测试服务器和测试客户端，简单测了一下TCP和KCP分别在内网和外网的延迟。 一. Java版KCP上一篇文章介绍的github的三种java版本，对比之下，我最终选择了 这个版本 进行测试。不过当我测完之后，发现这个版本的实现有个小小的缺陷：虽然它底层也是Ne">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java中使用KCP协议——性能测试及应用">
+<meta property="og:url" content="http://www.hjcenry.com/2021/12/29/Java%E4%B8%AD%E4%BD%BF%E7%94%A8KCP%E5%8D%8F%E8%AE%AE%E2%80%94%E2%80%94%E6%B5%8B%E8%AF%95%E5%AF%B9%E6%AF%94/index.html">
+<meta property="og:site_name" content="Henry Blog">
+<meta property="og:description" content="上一篇文章简单介绍了KCP基本的机制和原理，以及github上的三种java版本。但是上次留了一个小小的坑，缺少了性能测试部分。这几天通过写测试服务器和测试客户端，简单测了一下TCP和KCP分别在内网和外网的延迟。 一. Java版KCP上一篇文章介绍的github的三种java版本，对比之下，我最终选择了 这个版本 进行测试。不过当我测完之后，发现这个版本的实现有个小小的缺陷：虽然它底层也是Ne">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1472037-06d85dff9544c671?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1472037-9a6f5f2d42fa1421?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1472037-7559e86add0dfd87?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1472037-4fe46e17edb5ca46?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1472037-c65bd1404932e0cd?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1472037-7c40b5730b411316?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1472037-a7d8c4be4a314754?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1472037-e8cf545a71228657?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1472037-cb2b5d7e1d3a876a?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1472037-4e9de76346499eec?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1472037-cbf3f813065c2509?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1472037-30e3004a075497e4?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1472037-2a46ae089e80c1a0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="article:published_time" content="2021-12-29T05:04:20.000Z">
+<meta property="article:modified_time" content="2021-12-29T15:56:14.597Z">
+<meta property="article:author" content="Henry He">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="游戏服务器">
+<meta property="article:tag" content="网络">
+<meta property="article:tag" content="KCP">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/1472037-06d85dff9544c671?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+<link rel="canonical" href="http://www.hjcenry.com/2021/12/29/Java%E4%B8%AD%E4%BD%BF%E7%94%A8KCP%E5%8D%8F%E8%AE%AE%E2%80%94%E2%80%94%E6%B5%8B%E8%AF%95%E5%AF%B9%E6%AF%94/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Java中使用KCP协议——性能测试及应用 | Henry Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+<link rel="alternate" href="/atom.xml" title="Henry Blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Henry Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Javaer</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/hjcenry" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://www.hjcenry.com/2021/12/29/Java%E4%B8%AD%E4%BD%BF%E7%94%A8KCP%E5%8D%8F%E8%AE%AE%E2%80%94%E2%80%94%E6%B5%8B%E8%AF%95%E5%AF%B9%E6%AF%94/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Henry He">
+      <meta itemprop="description" content="我们不生产代码，我们只是API的搬运工">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Henry Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Java中使用KCP协议——性能测试及应用
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-12-29 13:04:20 / 修改时间：23:56:14" itemprop="dateCreated datePublished" datetime="2021-12-29T13:04:20+08:00">2021-12-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2021/12/29/Java%E4%B8%AD%E4%BD%BF%E7%94%A8KCP%E5%8D%8F%E8%AE%AE%E2%80%94%E2%80%94%E6%B5%8B%E8%AF%95%E5%AF%B9%E6%AF%94/" class="post-meta-item leancloud_visitors" data-flag-title="Java中使用KCP协议——性能测试及应用" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">评论：</span>
+    
+    <a title="valine" href="/2021/12/29/Java%E4%B8%AD%E4%BD%BF%E7%94%A8KCP%E5%8D%8F%E8%AE%AE%E2%80%94%E2%80%94%E6%B5%8B%E8%AF%95%E5%AF%B9%E6%AF%94/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/12/29/Java%E4%B8%AD%E4%BD%BF%E7%94%A8KCP%E5%8D%8F%E8%AE%AE%E2%80%94%E2%80%94%E6%B5%8B%E8%AF%95%E5%AF%B9%E6%AF%94/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>上一篇文章简单介绍了KCP基本的机制和原理，以及github上的三种java版本。但是上次留了一个小小的坑，缺少了性能测试部分。<br>这几天通过写测试服务器和测试客户端，简单测了一下TCP和KCP分别在内网和外网的延迟。</p>
+<h1 id="一-Java版KCP"><a href="#一-Java版KCP" class="headerlink" title="一. Java版KCP"></a>一. Java版KCP</h1><p>上一篇文章介绍的github的三种java版本，对比之下，我最终选择了 <a target="_blank" rel="noopener" href="https://github.com/l42111996/java-Kcp.git">这个版本</a> 进行测试。<br>不过当我测完之后，发现这个版本的实现有个小小的缺陷：虽然它底层也是Netty的实现版本，但是它的底层实在封装的太严实了，而对我们设计中以下两点不太友好：</p>
+<ol>
+<li>由于我们打算根据C原版作者的建议使用TCP/KCP双通道共同运作，原TCPServer我们是基于Netty实现的，有一套相对完整的抽象接口，本来我打算把KCPServer也通过封装和抽象集成到这套接口里面，但这套库的对外接口全部是自己封装的，完全不涉及Netty，以致于两套Server完全是不一样的实现思路。<strong>解决办法就是把KCP的层级做的高一点，就不太好利用一些公共方法了，可能还需要再做一层抽象和封装。</strong></li>
+<li>之前实现TCPServer的时候，编解码操作是作为Handler添加到Netty的响应链中的，也就是说编解码操作都是在Netty的IO线程操作的，而这套库的所有对外接口都是以ByteBuf为单位的。这意味着我们需要自己在外部实现编解码，这就涉及到线程的使用。目前是以下解决方案：<ul>
+<li>修改底层源码，改动可能较大</li>
+<li>自定义一套编解码处理线程，代替Netty的IO线程处理编解码的效果，相对改动较小</li>
+<li>换一个<a target="_blank" rel="noopener" href="https://github.com/szhnet/kcp-netty.git">基于Netty实现的版本</a></li>
+</ul>
+</li>
+</ol>
+<p>很不幸，最终我换了一个基于Netty实现的版本，主要我们当前的Server接口比较融合，准备先接进来，和前端联调，同时做好抽象，随时准备切换回这一套版本，并使用上面的第二个解决方案。<strong>主要考虑到这个库是有线上项目经验验证</strong>。</p>
+<h1 id="二、测试方式"><a href="#二、测试方式" class="headerlink" title="二、测试方式"></a>二、测试方式</h1><blockquote>
+<p>如果大家有需要，我可以把测试代码上传到github</p>
+</blockquote>
+<p>自定一个测试协议TestKcp</p>
+<figure class="highlight protobuf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// KCP测试协议</span></span><br><span class="line"><span class="class"><span class="keyword">message</span> <span class="title">TestKcp</span> </span>&#123;</span><br><span class="line"> <span class="keyword">required</span> <span class="built_in">int64</span> clientTime = <span class="number">1</span>;</span><br><span class="line"> <span class="keyword">required</span> <span class="built_in">int32</span> msgIndex = <span class="number">2</span>;</span><br><span class="line"> <span class="keyword">optional</span> <span class="built_in">string</span> content = <span class="number">3</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// KCP测试协议</span></span><br><span class="line"><span class="class"><span class="keyword">message</span> <span class="title">TestKcp_S2C</span> </span>&#123;</span><br><span class="line"> <span class="keyword">required</span> <span class="built_in">int64</span> clientTime = <span class="number">1</span>;</span><br><span class="line"> <span class="keyword">required</span> <span class="built_in">int64</span> serverTime = <span class="number">2</span>;</span><br><span class="line"> <span class="keyword">required</span> <span class="built_in">int32</span> msgIndex = <span class="number">3</span>;</span><br><span class="line"> <span class="keyword">optional</span> <span class="built_in">string</span> content = <span class="number">4</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>测试客户端逻辑</strong></p>
+<ol>
+<li>客户端启动并连接服务端</li>
+<li>启动定时器，每100ms，Proto编码一个条Test消息，消息中content长度为M，发送N条</li>
+<li>发送编码后的消息</li>
+<li>收到服务端回复的SC消息</li>
+<li>Proto解码，统计延迟（客户端收到第N条消息的时候，关闭客户端，统计所有消息的来回延迟）</li>
+</ol>
+<p><strong>测试服务端逻辑</strong></p>
+<ol>
+<li>启动服务端并监听端口</li>
+<li>收到客户端消息</li>
+<li>Proto解码消息</li>
+<li>Proto编码SC消息</li>
+<li>回复SC消息</li>
+</ol>
+<p>在<strong>内网环境</strong>(同机房机器)，<strong>外网环境</strong>(上海机器)分别部署TCP和KCP的服务端</p>
+<h1 id="三、测试结果"><a href="#三、测试结果" class="headerlink" title="三、测试结果"></a>三、测试结果</h1><p>以下是通过我的测试逻辑跑出来的测试结果，结果是通过把测试数据交给python的matplotlib库所画出来（<strong>几行代码搞定，很简单</strong>）</p>
+<h2 id="1-KCP测试"><a href="#1-KCP测试" class="headerlink" title="1.  KCP测试"></a>1.  KCP测试</h2><p><strong>1.1 KCP：</strong>内网环境 VS 外网环境<strong>平均延迟</strong>对比</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1472037-06d85dff9544c671?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="KCP平均延迟测试"></p>
+<p><strong>1.2 KCP：</strong>内网环境 VS 外网环境<strong>最高延迟</strong>对比</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1472037-9a6f5f2d42fa1421?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="KCP最高延迟测试"></p>
+<p><strong>1.3 KCP：</strong>内网环境 VS 外网环境<strong>最低延迟</strong>对比</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1472037-7559e86add0dfd87?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="KCP最低延迟测试"></p>
+<h2 id="2-TCP测试"><a href="#2-TCP测试" class="headerlink" title="2. TCP测试"></a>2. TCP测试</h2><p><strong>2.1 TCP：</strong>内网环境 VS 外网环境<strong>平均延迟</strong>对比</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1472037-4fe46e17edb5ca46?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="TCP平均延迟测试"></p>
+<p><strong>2.2 TCP：</strong>内网环境 VS 外网环境<strong>最高延迟</strong>对比</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1472037-c65bd1404932e0cd?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="TCP最高延迟测试"></p>
+<p><strong>2.3 TCP：</strong>内网环境 VS 外网环境<strong>最低延迟</strong>对比</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1472037-7c40b5730b411316?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="TCP最低延迟测试"></p>
+<h2 id="3-TCP-VS-KCP对比测试"><a href="#3-TCP-VS-KCP对比测试" class="headerlink" title="3. TCP VS KCP对比测试"></a>3. TCP VS KCP对比测试</h2><p><strong>3.1 TCP VS KCP：平均延迟</strong>对比</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1472037-a7d8c4be4a314754?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="TCP VS KCP平均延迟测试"><br><img src="https://upload-images.jianshu.io/upload_images/1472037-e8cf545a71228657?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="TCP VS KCP平均延迟测试"></p>
+<p><strong>3.2 TCP VS KCP：最高延迟</strong>对比</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1472037-cb2b5d7e1d3a876a?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="TCP VS KCP最高延迟测试"><br><img src="https://upload-images.jianshu.io/upload_images/1472037-4e9de76346499eec?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="TCP VS KCP最高延迟测试"></p>
+<p><strong>3.3 TCP VS KCP：最低延迟</strong>对比</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1472037-cbf3f813065c2509?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="TCP VS KCP最低延迟测试"><br><img src="https://upload-images.jianshu.io/upload_images/1472037-30e3004a075497e4?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="TCP VS KCP最低延迟测试"></p>
+<h1 id="四、-测试结论"><a href="#四、-测试结论" class="headerlink" title="四、 测试结论"></a>四、 测试结论</h1><p>现象描述：</p>
+<ul>
+<li><strong>KCP</strong>的外网环境平均延迟稳定在30ms左右，内网环境平均延迟稳定在3ms左右</li>
+<li><strong>KCP</strong>的外网环境比内网环境延迟要高，但差距不大，和内网环境相比，平均延迟最高达到10倍(内网最高1ms,外网最高33ms,即使达到外网最高延迟,相对也是比较稳定的)</li>
+<li><strong>TCP</strong>的外网环境非常不稳定，最高达到3400ms，最高与内网相差几乎达到3400倍，而最低也有150ms</li>
+<li><strong>KCP和TCP对比</strong>，KCP内网，TCP内网，KCP外网，平均延迟都相对稳定，内网环境下，TCP大部分时间都优于KCP，一旦到了外网环境，KCP表现非常稳定，而TCP外网非常不稳定，平均延迟忽高忽低</li>
+</ul>
+<p><strong>结论</strong>：</p>
+<ul>
+<li>较好的网络环境下（测试中的内网环境），TCP大部分时候都优于KCP</li>
+<li>较差的网络环境下（测试中的外网环境），KCP延迟稳定性远大于TCP</li>
+<li>国内部分网络防火墙可能丢弃UDP包</li>
+<li>建议战斗内（Lua层）同步协议使用KCP，战斗进入前其他协议继续使用TCP</li>
+<li>国内部分网络可能出现UDP不通的情况，因此建议同时保留TCP和KCP，指定一个通信策略，比如优先KCP，KCP不通的情况下，退回到TCP通信；或者根据网络状况，动态选择TCP还是KCP</li>
+<li>KCP作者的使用建议（<a target="_blank" rel="noopener" href="https://github.com/skywind3000/kcp/wiki/Cooperate-With-Tcp-Server%EF%BC%89">https://github.com/skywind3000/kcp/wiki/Cooperate-With-Tcp-Server）</a></li>
+</ul>
+<p>这个测试代码也可以用来测试并调整KCP参数</p>
+<h1 id="五、KCP实际应用"><a href="#五、KCP实际应用" class="headerlink" title="五、KCP实际应用"></a>五、KCP实际应用</h1><p>根据KCP的特性，以下是实际应用设计</p>
+<h2 id="1-TCP登录"><a href="#1-TCP登录" class="headerlink" title="1. TCP登录"></a><strong>1. TCP登录</strong></h2><ol>
+<li>BattleLogin的时候，服务器创建KcpChannel对象，设置convId规则：<em>index * 100000 + 6位随机数，*</em>并*绑定TCP和KCP的关系</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 生成kcp唯一id</span></span><br><span class="line"><span class="comment"> * FIXME 这个方法到INT最大值的临界点会有多线程问题，可能产生相同id，想想怎么优化</span></span><br><span class="line"><span class="comment"> * KCP convId规则：redis index * 100000</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">generateKcpConvId</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">long</span> incrNum = RedisManager.getTemplate().incr(DBEnum.global_new_kcp_conv_Id, <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">if</span> (incrNum &gt;= KCP_CONV_REDIS_MAX_INDEX) &#123;</span><br><span class="line">        RedisManager.getTemplate().set(DBEnum.global_new_kcp_conv_Id, <span class="number">0</span>, <span class="string">&quot;0&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 生成6位随机数</span></span><br><span class="line">    <span class="keyword">int</span> random = MathUtils.intRand(kcpConvRandom, KCP_CONV_RANDOM_MIN, KCP_CONV_RANDOM_MAX);</span><br><span class="line">    <span class="keyword">return</span> (<span class="keyword">int</span>) (incrNum * KCP_CONV_RANDOM_MIN + random);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>BattleLogin_S2C返回该convId</li>
+</ol>
+<h2 id="2-KCP登录"><a href="#2-KCP登录" class="headerlink" title="2.KCP登录"></a><strong>2.KCP登录</strong></h2><ol>
+<li>检测KCP传过来的uid的玩家是否有Human对象，有则该玩家完成了TCP登录</li>
+<li>检测该玩家身上是否有KCP连接的convId，是否和当前KCP的convId是同一个id</li>
+<li>检测TCP的IP和KCP的IP是否是同一个来源</li>
+<li>服务器增加KCP通道管理</li>
+</ol>
+<blockquote>
+<p>如果有必要，可以在消息包里再加个随机的token，防止udp包造假，或者在每条心跳消息都下发新的token</p>
+</blockquote>
+<h2 id="3-TCP-KCP网络切换"><a href="#3-TCP-KCP网络切换" class="headerlink" title="3.TCP/KCP网络切换"></a><strong>3.TCP/KCP网络切换</strong></h2><p>由于国内部分地区UDP无法击穿，因此需要TCP/UDP双线路设计。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1472037-2a46ae089e80c1a0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="网络切换.png"></p>
+<p>服务端同时提供TCP和KCP网络，并且可随时切换，把网络选择权交给客户端</p>
+<ul>
+<li>服务器启动时<strong>同时启动TCPServer和KCPServer</strong>，同时工作，同时处理消息</li>
+<li>Human对象身上记录当前网络状态，<strong>默认TCP</strong></li>
+<li>TCP Server收到战斗消息（Lua层的状态同步消息），切换Human为TCP模式</li>
+<li>KCP Server收到战斗消息（Lua层的状态同步消息），切换Human为KCP模式</li>
+<li>Human提供统一push方法，其中读取当前网络方法：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">protected</span> NetMessageType <span class="title">getNetMessageType</span><span class="params">(Packet packet)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 默认推送TCP网络</span></span><br><span class="line">    NetMessageType netMessageType = NetMessageType.NET_TCP;</span><br><span class="line">    <span class="keyword">int</span> code = packet.getHeader();</span><br><span class="line">    <span class="comment">// 战斗消息</span></span><br><span class="line">    IPSEnum ipsEnum = ThrudServerApplicationContext.getEnum(code);</span><br><span class="line">    <span class="keyword">if</span> (ipsEnum != <span class="keyword">null</span> &amp;&amp; ipsEnum.isBattleMsg()) &#123;</span><br><span class="line">        <span class="comment">// 战斗消息，根据玩家当前网络通道推送</span></span><br><span class="line">        netMessageType = <span class="keyword">this</span>.battleMessageNet;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> netMessageType;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="4-TCP-KCP-Idle超时"><a href="#4-TCP-KCP-Idle超时" class="headerlink" title="4.TCP/KCP Idle超时"></a><strong>4.TCP/KCP Idle超时</strong></h2><ul>
+<li>服务器TCP和KCP均设定超时30s，客户端需要定时发送心跳消息(<strong>BattleHeartBeat</strong>)，发送TCP或KCP都可以</li>
+<li>TCP和KCP均触发读超时后，服务器断开玩家所有连接，并踢下线</li>
+</ul>
+<h2 id="5-其他"><a href="#5-其他" class="headerlink" title="5.其他"></a><strong>5.其他</strong></h2><p>不管任何情况下，TCP断开，服务器也会同时断开KCP（清除KCP连接信息），因此TCP走重连的时候，也需要同时走KCP的重连</p>
+<blockquote>
+<p>个人微信公众号：Henry游戏开发<br>个人博客：<a href="https://link.zhihu.com/?target=https://hjcenry.com">https://hjcenry.com</a><br>CSDN：<a href="https://link.zhihu.com/?target=https://blog.csdn.net/hjcenry">https://blog.csdn.net/hjcenry</a><br>简书：<a target="_blank" rel="noopener" href="https://www.jianshu.com/u/7fa742801aeb">https://www.jianshu.com/u/7fa742801aeb</a></p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>大爷赏点儿呗.</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="https://www.hjcenry.com/res/img/wechat_pay.jpg" alt="Henry He 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="https://www.hjcenry.com/res/img/alipay.jpg" alt="Henry He 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://www.hjcenry.com/res/img/wx.jpg">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">WeChat</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Java/" rel="tag"># Java</a>
+              <a href="/tags/%E6%B8%B8%E6%88%8F%E6%9C%8D%E5%8A%A1%E5%99%A8/" rel="tag"># 游戏服务器</a>
+              <a href="/tags/%E7%BD%91%E7%BB%9C/" rel="tag"># 网络</a>
+              <a href="/tags/KCP/" rel="tag"># KCP</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/12/21/Java%E4%B8%AD%E4%BD%BF%E7%94%A8KCP%E5%8D%8F%E8%AE%AE/" rel="prev" title="Java中使用KCP协议">
+      <i class="fa fa-chevron-left"></i> Java中使用KCP协议
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/01/11/%E6%88%91%E7%9A%842021/" rel="next" title="我的2021">
+      我的2021 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80-Java%E7%89%88KCP"><span class="nav-number">1.</span> <span class="nav-text">一. Java版KCP</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E6%B5%8B%E8%AF%95%E6%96%B9%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">二、测试方式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C"><span class="nav-number">3.</span> <span class="nav-text">三、测试结果</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-KCP%E6%B5%8B%E8%AF%95"><span class="nav-number">3.1.</span> <span class="nav-text">1.  KCP测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-TCP%E6%B5%8B%E8%AF%95"><span class="nav-number">3.2.</span> <span class="nav-text">2. TCP测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-TCP-VS-KCP%E5%AF%B9%E6%AF%94%E6%B5%8B%E8%AF%95"><span class="nav-number">3.3.</span> <span class="nav-text">3. TCP VS KCP对比测试</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%9B%E3%80%81-%E6%B5%8B%E8%AF%95%E7%BB%93%E8%AE%BA"><span class="nav-number">4.</span> <span class="nav-text">四、 测试结论</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%94%E3%80%81KCP%E5%AE%9E%E9%99%85%E5%BA%94%E7%94%A8"><span class="nav-number">5.</span> <span class="nav-text">五、KCP实际应用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-TCP%E7%99%BB%E5%BD%95"><span class="nav-number">5.1.</span> <span class="nav-text">1. TCP登录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-KCP%E7%99%BB%E5%BD%95"><span class="nav-number">5.2.</span> <span class="nav-text">2.KCP登录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-TCP-KCP%E7%BD%91%E7%BB%9C%E5%88%87%E6%8D%A2"><span class="nav-number">5.3.</span> <span class="nav-text">3.TCP&#x2F;KCP网络切换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-TCP-KCP-Idle%E8%B6%85%E6%97%B6"><span class="nav-number">5.4.</span> <span class="nav-text">4.TCP&#x2F;KCP Idle超时</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E5%85%B6%E4%BB%96"><span class="nav-number">5.5.</span> <span class="nav-text">5.其他</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Henry He"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Henry He</p>
+  <div class="site-description" itemprop="description">我们不生产代码，我们只是API的搬运工</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">61</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">35</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="sidebar-button motion-element">
+    <a onclick="tidioChatApi.open();"><i class="fa fa-comment"></i>
+    Chat
+  </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/hjcenry" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;hjcenry" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.youtube.com/channel/UC9EM174qUGvIm8uQHILXE3Q" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UC9EM174qUGvIm8uQHILXE3Q" rel="noopener" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:hejincheng1209@163.com" title="E-Mail → mailto:hejincheng1209@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/15286724" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;15286724" rel="noopener" target="_blank"><i class="fab fa-bilibili fa-fw"></i>Bilibili</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://weibo.com/2996874513/profile?topnav=1&wvr=6&is_all=1" title="Weibo → http:&#x2F;&#x2F;weibo.com&#x2F;2996874513&#x2F;profile?topnav&#x3D;1&amp;wvr&#x3D;6&amp;is_all&#x3D;1" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://me.csdn.net/weixin_43495590" title="https:&#x2F;&#x2F;me.csdn.net&#x2F;weixin_43495590" rel="noopener" target="_blank">周piaopiao</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.baitanwa.com/" title="https:&#x2F;&#x2F;www.baitanwa.com" rel="noopener" target="_blank">泽北大佬</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">京ICP备2020034953号 </a>
+      <img src="https://www.hjcenry.com/res/img/beianicon.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010502042351" rel="noopener" target="_blank">京公网安备11010502042351号 </a>
+  </div>
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Henry He</span>
+
+</div>
+
+<!--
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+-->
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+
+      <script src="/js/live2d/autoload.js"></script>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+  <script src="//code.tidio.co/6vdofc43qnpkj50mghb80jws0rjhfjwb.js"></script>
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'DQrsykJ4iGseNRFW3YLghDqk-gzGzoHsz',
+      appKey     : '77GsyoUfVcOoIueBsMYv2PoP',
+      placeholder: "ヾﾉ≧∀≦)o 来呀！快活呀！~",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

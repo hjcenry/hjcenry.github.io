@@ -2,6 +2,55 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.hjcenry.com/2022/01/25/%E7%8B%97%E7%8B%97%E5%9B%9E%E5%BF%86%E5%BD%95/</loc>
+    
+    <lastmod>2022-01-25</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.hjcenry.com/2022/01/18/%E5%9F%BA%E4%BA%8EKCP%E7%9A%84TCP&UDP%E5%A4%9A%E9%80%9A%E9%81%93%E5%BC%80%E6%BA%90%E6%A1%86%E6%9E%B6/</loc>
+    
+    <lastmod>2022-01-25</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.hjcenry.com/2022/01/11/%E6%88%91%E7%9A%842021/</loc>
+    
+    <lastmod>2022-01-14</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.hjcenry.com/2017/01/03/Java%E6%B8%B8%E6%88%8F%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%E2%80%94%E2%80%942016%E9%9A%8F%E7%AC%94%E6%80%BB%E7%BB%93/</loc>
+    
+    <lastmod>2022-01-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.hjcenry.com/2018/01/08/2017%E9%9A%8F%E7%AC%94%E6%80%BB%E7%BB%93/</loc>
+    
+    <lastmod>2022-01-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.hjcenry.com/2016/06/19/Cocos2d-JS%E5%AE%9E%E7%8E%B0%E7%9A%842048/</loc>
+    
+    <lastmod>2022-01-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.hjcenry.com/2021/12/29/Java%E4%B8%AD%E4%BD%BF%E7%94%A8KCP%E5%8D%8F%E8%AE%AE%E2%80%94%E2%80%94%E6%B5%8B%E8%AF%95%E5%AF%B9%E6%AF%94/</loc>
+    
+    <lastmod>2021-12-29</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.hjcenry.com/2021/12/21/Java%E4%B8%AD%E4%BD%BF%E7%94%A8KCP%E5%8D%8F%E8%AE%AE/</loc>
     
     <lastmod>2021-12-22</lastmod>
@@ -10,13 +59,6 @@
   
   <url>
     <loc>http://www.hjcenry.com/2021/12/21/Java%E4%B8%8ELua%E7%9B%B8%E4%BA%92%E8%B0%83%E7%94%A8/</loc>
-    
-    <lastmod>2021-12-22</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.hjcenry.com/2021/12/22/%E6%88%91%E7%9A%8430%E5%B2%81/</loc>
     
     <lastmod>2021-12-22</lastmod>
     
@@ -72,23 +114,9 @@
   </url>
   
   <url>
-    <loc>http://www.hjcenry.com/2018/01/08/2017%E9%9A%8F%E7%AC%94%E6%80%BB%E7%BB%93/</loc>
-    
-    <lastmod>2018-01-08</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.hjcenry.com/2017/02/16/%E6%88%91%E5%9C%A8%E5%88%9B%E4%B8%9A%E6%B8%B8%E6%88%8F%E5%85%AC%E5%8F%B8%E7%9A%84%E4%B8%80%E5%B9%B4/</loc>
     
     <lastmod>2017-02-19</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.hjcenry.com/2017/01/03/Java%E6%B8%B8%E6%88%8F%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%E2%80%94%E2%80%942016%E9%9A%8F%E7%AC%94%E6%80%BB%E7%BB%93/</loc>
-    
-    <lastmod>2017-01-04</lastmod>
     
   </url>
   
@@ -138,13 +166,6 @@
     <loc>http://www.hjcenry.com/2016/07/02/Cocos%20Creator%E5%AE%9E%E7%8E%B0%E7%9A%84%E3%80%8A%E7%82%B9%E6%88%91+1%E3%80%8B/</loc>
     
     <lastmod>2016-07-02</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.hjcenry.com/2016/06/19/Cocos2d-JS%E5%AE%9E%E7%8E%B0%E7%9A%842048/</loc>
-    
-    <lastmod>2016-06-19</lastmod>
     
   </url>
   
@@ -422,14 +443,14 @@
   </url>
   
   <url>
-    <loc>http://www.hjcenry.com/categories/index.html</loc>
+    <loc>http://www.hjcenry.com/tags/index.html</loc>
     
     <lastmod>2016-04-22</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.hjcenry.com/tags/index.html</loc>
+    <loc>http://www.hjcenry.com/categories/index.html</loc>
     
     <lastmod>2016-04-22</lastmod>
     
@@ -438,7 +459,7 @@
 
   <url>
     <loc>http://www.hjcenry.com/</loc>
-    <lastmod>2021-12-22</lastmod>
+    <lastmod>2022-01-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -446,231 +467,245 @@
   
   <url>
     <loc>http://www.hjcenry.com/tags/Java/</loc>
-    <lastmod>2021-12-22</lastmod>
+    <lastmod>2022-01-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.hjcenry.com/tags/%E6%B8%B8%E6%88%8F%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
-    <lastmod>2021-12-22</lastmod>
+    <lastmod>2022-01-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.hjcenry.com/tags/%E6%80%BB%E7%BB%93/</loc>
-    <lastmod>2021-12-22</lastmod>
+    <lastmod>2022-01-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.hjcenry.com/tags/%E9%9A%8F%E7%AC%94/</loc>
-    <lastmod>2021-12-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.hjcenry.com/tags/cocos2d-js/</loc>
-    <lastmod>2021-12-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.hjcenry.com/tags/cvp/</loc>
-    <lastmod>2021-12-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.hjcenry.com/tags/rpc/</loc>
-    <lastmod>2021-12-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.hjcenry.com/tags/jsonrpc/</loc>
-    <lastmod>2021-12-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.hjcenry.com/tags/Lua/</loc>
-    <lastmod>2021-12-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.hjcenry.com/tags/%E5%B9%B6%E5%8F%91/</loc>
-    <lastmod>2021-12-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.hjcenry.com/tags/Bug/</loc>
-    <lastmod>2021-12-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.hjcenry.com/tags/%E7%BD%91%E7%BB%9C/</loc>
-    <lastmod>2021-12-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.hjcenry.com/tags/KCP/</loc>
-    <lastmod>2021-12-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.hjcenry.com/tags/%E6%84%9F%E6%82%9F/</loc>
-    <lastmod>2021-12-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.hjcenry.com/tags/Echarts/</loc>
-    <lastmod>2021-12-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.hjcenry.com/tags/%E5%88%9B%E4%B8%9A/</loc>
-    <lastmod>2021-12-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.hjcenry.com/tags/Motan/</loc>
-    <lastmod>2021-12-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.hjcenry.com/tags/%E5%BC%80%E6%BA%90/</loc>
-    <lastmod>2021-12-22</lastmod>
+    <lastmod>2022-01-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.hjcenry.com/tags/%E7%94%9F%E6%B4%BB/</loc>
-    <lastmod>2021-12-22</lastmod>
+    <lastmod>2022-01-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.hjcenry.com/tags/cocos2d-js/</loc>
+    <lastmod>2022-01-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.hjcenry.com/tags/cvp/</loc>
+    <lastmod>2022-01-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.hjcenry.com/tags/rpc/</loc>
+    <lastmod>2022-01-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.hjcenry.com/tags/jsonrpc/</loc>
+    <lastmod>2022-01-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.hjcenry.com/tags/Lua/</loc>
+    <lastmod>2022-01-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.hjcenry.com/tags/%E7%BD%91%E7%BB%9C/</loc>
+    <lastmod>2022-01-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.hjcenry.com/tags/KCP/</loc>
+    <lastmod>2022-01-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.hjcenry.com/tags/%E5%B9%B6%E5%8F%91/</loc>
+    <lastmod>2022-01-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.hjcenry.com/tags/Bug/</loc>
+    <lastmod>2022-01-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.hjcenry.com/tags/%E6%84%9F%E6%82%9F/</loc>
+    <lastmod>2022-01-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.hjcenry.com/tags/Echarts/</loc>
+    <lastmod>2022-01-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.hjcenry.com/tags/Motan/</loc>
+    <lastmod>2022-01-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.hjcenry.com/tags/%E5%BC%80%E6%BA%90/</loc>
+    <lastmod>2022-01-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.hjcenry.com/tags/%E5%88%9B%E4%B8%9A/</loc>
+    <lastmod>2022-01-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.hjcenry.com/tags/Linux/</loc>
-    <lastmod>2021-12-22</lastmod>
+    <lastmod>2022-01-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.hjcenry.com/tags/%E7%97%85%E6%AF%92/</loc>
-    <lastmod>2021-12-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.hjcenry.com/tags/Python/</loc>
-    <lastmod>2021-12-22</lastmod>
+    <lastmod>2022-01-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.hjcenry.com/tags/%E6%9E%B6%E6%9E%84/</loc>
-    <lastmod>2021-12-22</lastmod>
+    <lastmod>2022-01-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.hjcenry.com/tags/Python/</loc>
+    <lastmod>2022-01-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.hjcenry.com/tags/%E7%8B%97%E7%8B%97/</loc>
+    <lastmod>2022-01-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.hjcenry.com/tags/%E7%82%B9%E6%88%91-1/</loc>
-    <lastmod>2021-12-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.hjcenry.com/tags/2048/</loc>
-    <lastmod>2021-12-22</lastmod>
+    <lastmod>2022-01-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.hjcenry.com/tags/%E8%B4%AA%E5%90%83%E8%9B%87/</loc>
-    <lastmod>2021-12-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.hjcenry.com/tags/%E5%BC%B1%E8%81%94%E7%BD%91/</loc>
-    <lastmod>2021-12-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.hjcenry.com/tags/SLG/</loc>
-    <lastmod>2021-12-22</lastmod>
+    <lastmod>2022-01-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.hjcenry.com/tags/csv/</loc>
-    <lastmod>2021-12-22</lastmod>
+    <lastmod>2022-01-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.hjcenry.com/tags/xml/</loc>
-    <lastmod>2021-12-22</lastmod>
+    <lastmod>2022-01-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.hjcenry.com/tags/%E5%BC%B1%E8%81%94%E7%BD%91/</loc>
+    <lastmod>2022-01-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.hjcenry.com/tags/SLG/</loc>
+    <lastmod>2022-01-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.hjcenry.com/tags/%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1/</loc>
+    <lastmod>2022-01-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.hjcenry.com/tags/%E5%BC%80%E6%BA%90%E6%A1%86%E6%9E%B6/</loc>
+    <lastmod>2022-01-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.hjcenry.com/tags/Netty/</loc>
-    <lastmod>2021-12-22</lastmod>
+    <lastmod>2022-01-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.hjcenry.com/tags/%E6%89%93%E9%A3%9E%E6%9C%BA/</loc>
-    <lastmod>2021-12-22</lastmod>
+    <lastmod>2022-01-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.hjcenry.com/tags/Mongo/</loc>
-    <lastmod>2021-12-22</lastmod>
+    <lastmod>2022-01-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -679,28 +714,28 @@
   
   <url>
     <loc>http://www.hjcenry.com/categories/Java/</loc>
-    <lastmod>2021-12-22</lastmod>
+    <lastmod>2022-01-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.hjcenry.com/categories/cocos2d-js/</loc>
-    <lastmod>2021-12-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.hjcenry.com/categories/%E7%94%9F%E6%B4%BB/</loc>
-    <lastmod>2021-12-22</lastmod>
+    <lastmod>2022-01-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://www.hjcenry.com/categories/Python/</loc>
-    <lastmod>2021-12-22</lastmod>
+    <lastmod>2022-01-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.hjcenry.com/categories/%E7%94%9F%E6%B4%BB/</loc>
+    <lastmod>2022-01-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
